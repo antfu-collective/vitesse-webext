@@ -1,7 +1,7 @@
 import { resolve } from 'path'
 import fs from 'fs-extra'
 
-const port = 3303
+const port = parseInt(process.env.PORT || '') || 3303
 const r = (...args: string[]) => resolve(__dirname, '..', ...args)
 
 const views = [
@@ -15,6 +15,7 @@ async function run() {
     let data = await fs.readFile(r(`views/${view}/index.html`), 'utf-8')
     data = data.replace('"./main.ts"', `"http://localhost:${port}/${view}/main.ts"`)
     await fs.writeFile(r(`extension/dist/${view}/index.html`), data, 'utf-8')
+    // eslint-disable-next-line no-console
     console.log(`✅ stub ${view}`)
   }
 }

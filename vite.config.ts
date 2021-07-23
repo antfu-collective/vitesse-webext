@@ -6,19 +6,20 @@ import ViteComponents from 'vite-plugin-components'
 import WindiCSS from 'vite-plugin-windicss'
 import windiConfig from './windi.config'
 
+const port = parseInt(process.env.PORT || '') || 3303
 const r = (...args: string[]) => resolve(__dirname, ...args)
 
 export default defineConfig(({ command }) => {
   return {
     root: r('views'),
-    base: command === 'serve' ? 'http://localhost:3033/' : undefined,
+    base: command === 'serve' ? `http://localhost:${port}/` : undefined,
     resolve: {
       alias: {
         '~/': `${r('views')}/`,
       },
     },
     server: {
-      port: 3303,
+      port,
       hmr: {
         host: 'localhost',
       },
