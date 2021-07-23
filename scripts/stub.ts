@@ -1,3 +1,4 @@
+// generate stub index.html files for dev entry
 import { resolve } from 'path'
 import fs from 'fs-extra'
 
