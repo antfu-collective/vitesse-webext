@@ -16,13 +16,17 @@ A [Vite](https://vitejs.dev/)-powered web extension ([Chrome](https://developer.
 
 ## Pre-packed
 
-### Plugins
+### Libraries
 
 - [`webextension-polyfill-ts`](https://github.com/Lusito/webextension-polyfill-ts) - WebExtension browser API Polyfill with types
-- [`vite-plugin-components`](https://github.com/antfu/vite-plugin-components) - components auto import
-- [`vite-plugin-windicss`](https://github.com/antfu/vite-plugin-windicss) - WindiCSS support
+- [`crx-bridge`](https://github.com/NeekSandhu/crx-bridge) - effortlessly communication between contexts
 - [VueUse](https://github.com/antfu/vueuse) - collection of useful composition APIs
 - [`vue-global-api`](https://github.com/antfu/vue-global-api) - use Vue Composition API globally
+
+### Vite Plugins
+
+- [`vite-plugin-components`](https://github.com/antfu/vite-plugin-components) - components auto import
+- [`vite-plugin-windicss`](https://github.com/antfu/vite-plugin-windicss) - WindiCSS support
 
 ### UI Frameworks
 

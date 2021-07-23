@@ -11,10 +11,6 @@
     "clear": "rimraf extension/dist"
   },
   "devDependencies": {
-    "@vueuse/core": "^5.1.4",
-    "vue": "^3.1.5",
-    "vue-demi": "^0.11.2",
-    "vue-global-api": "^0.2.4",
     "@antfu/eslint-config": "^0.7.0",
     "@iconify/json": "^1.1.379",
     "@types/fs-extra": "^9.0.12",
@@ -22,7 +18,9 @@
     "@typescript-eslint/eslint-plugin": "^4.28.4",
     "@vitejs/plugin-vue": "^1.2.5",
     "@vue/compiler-sfc": "^3.1.5",
+    "@vueuse/core": "^5.1.4",
     "cross-env": "^7.0.3",
+    "crx-bridge": "^3.0.1",
     "eslint": "^7.31.0",
     "esno": "^0.8.0",
     "fs-extra": "^10.0.0",
@@ -33,8 +31,10 @@
     "vite": "^2.4.3",
     "vite-plugin-components": "^0.13.2",
     "vite-plugin-icons": "^0.6.5",
-    "vite-plugin-pages": "^0.15.1",
     "vite-plugin-windicss": "^1.2.5",
+    "vue": "^3.1.5",
+    "vue-demi": "^0.11.2",
+    "vue-global-api": "^0.2.4",
     "webextension-polyfill-ts": "^0.26.0"
   }
 }
