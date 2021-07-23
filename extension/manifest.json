@@ -38,5 +38,6 @@
      "notifications",
      "http://*/",
      "https://*/"
-   ]
+  ],
+  "content_security_policy": "script-src 'self' http://localhost:3303; object-src 'self'"
 }

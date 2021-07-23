@@ -18,7 +18,7 @@
       "vite-plugin-pages/client"
     ],
     "paths": {
-      "~/*": ["src/*"]
+      "~/*": ["views/*"]
     }
   },
   "exclude": ["dist", "node_modules"]

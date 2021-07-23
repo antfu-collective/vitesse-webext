@@ -3,6 +3,7 @@ lockfileVersion: 5.3
 specifiers:
   '@antfu/eslint-config': ^0.7.0
   '@iconify/json': ^1.1.378
+  '@types/fs-extra': ^9.0.12
   '@types/node': ^16.4.1
   '@typescript-eslint/eslint-plugin': ^4.28.3
   '@vitejs/plugin-vue': ^1.2.5
@@ -10,6 +11,7 @@ specifiers:
   '@vueuse/core': ^5.1.4
   cross-env: ^7.0.3
   eslint: ^7.31.0
+  fs-extra: ^10.0.0
   npm-run-all: ^4.1.5
   pnpm: ^6.10.3
   tsup: ^4.12.5
@@ -33,12 +35,14 @@ dependencies:
 devDependencies:
   '@antfu/eslint-config': 0.7.0_eslint@7.31.0+typescript@4.3.5
   '@iconify/json': 1.1.379
+  '@types/fs-extra': 9.0.12
   '@types/node': 16.4.1
   '@typescript-eslint/eslint-plugin': 4.28.4_eslint@7.31.0+typescript@4.3.5
   '@vitejs/plugin-vue': 1.2.5_@vue+compiler-sfc@3.1.5
   '@vue/compiler-sfc': 3.1.5_vue@3.1.5
   cross-env: 7.0.3
   eslint: 7.31.0
+  fs-extra: 10.0.0
   npm-run-all: 4.1.5
   pnpm: 6.10.3
   tsup: 4.12.5_typescript@4.3.5
@@ -426,6 +430,12 @@ packages:
 
   /@types/estree/0.0.48:
     resolution: {integrity: sha512-LfZwXoGUDo0C3me81HXgkBg5CTQYb6xzEl+fNmbO4JdRiSKQ8A0GD1OBBvKAIsbCUgoyAty7m99GqqMQe784ew==}
+    dev: true
+
+  /@types/fs-extra/9.0.12:
+    resolution: {integrity: sha512-I+bsBr67CurCGnSenZZ7v94gd3tc3+Aj2taxMT4yu4ABLuOgOjeFxX3dokG24ztSRg5tnT00sL8BszO7gSMoIw==}
+    dependencies:
+      '@types/node': 16.4.1
     dev: true
 
   /@types/json-schema/7.0.8:
@@ -1648,6 +1658,15 @@ packages:
     resolution: {integrity: sha1-C+4AUBiusmDQo6865ljdATbsG5k=}
     dev: true
 
+  /fs-extra/10.0.0:
+    resolution: {integrity: sha512-C5owb14u9eJwizKGdchcDUQeFtlSHHthBk8pbX9Vc1PFZrLombudjDnNns88aYslCyF6IY5SUw3Roz6xShcEIQ==}
+    engines: {node: '>=12'}
+    dependencies:
+      graceful-fs: 4.2.6
+      jsonfile: 6.1.0
+      universalify: 2.0.0
+    dev: true
+
   /fs.realpath/1.0.0:
     resolution: {integrity: sha1-FQStJSMVjKpA20onh8sBQRmU6k8=}
     dev: true
@@ -2082,6 +2101,14 @@ packages:
       semver: 6.3.0
     transitivePeerDependencies:
       - eslint
+    dev: true
+
+  /jsonfile/6.1.0:
+    resolution: {integrity: sha512-5dgndWOriYSm5cnYaJNhalLNDKOqFwyDB/rr1E9ZsGciGvKPs8R2xYGCacuf3z6K1YKDz182fd+fY3cn3pMqXQ==}
+    dependencies:
+      universalify: 2.0.0
+    optionalDependencies:
+      graceful-fs: 4.2.6
     dev: true
 
   /jsx-ast-utils/3.2.0:
@@ -3154,6 +3181,11 @@ packages:
       has-bigints: 1.0.1
       has-symbols: 1.0.2
       which-boxed-primitive: 1.0.2
+    dev: true
+
+  /universalify/2.0.0:
+    resolution: {integrity: sha512-hAZsKq7Yy11Zu1DE0OzWjw7nnLZmJZYTDZZyEFHZdUhV8FkH5MCfoU1XMaxXovpyW5nq5scPqq0ZDP9Zyl04oQ==}
+    engines: {node: '>= 10.0.0'}
     dev: true
 
   /uri-js/4.4.1:

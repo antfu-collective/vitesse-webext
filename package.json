@@ -2,11 +2,12 @@
   "private": true,
   "scripts": {
     "dev": "run-p dev:*",
-    "dev:web": "vite build --watch",
+    "dev:stub": "esno scripts/stub.ts",
+    "dev:web": "vite",
     "dev:js": "npm run build:js -- --watch",
     "build": "run-s clear build:web build:js",
     "build:web": "vite build",
-    "build:js": "tsup scripts/background scripts/content --format iife --out-dir extension/dist",
+    "build:js": "tsup src/background src/content --format iife --out-dir extension/dist",
     "clear": "rimraf extension/dist"
   },
   "dependencies": {
@@ -18,12 +19,14 @@
   "devDependencies": {
     "@antfu/eslint-config": "^0.7.0",
     "@iconify/json": "^1.1.378",
+    "@types/fs-extra": "^9.0.12",
     "@types/node": "^16.4.1",
     "@typescript-eslint/eslint-plugin": "^4.28.3",
     "@vitejs/plugin-vue": "^1.2.5",
     "@vue/compiler-sfc": "^3.1.5",
     "cross-env": "^7.0.3",
     "eslint": "^7.31.0",
+    "fs-extra": "^10.0.0",
     "npm-run-all": "^4.1.5",
     "pnpm": "^6.10.3",
     "tsup": "^4.12.5",
