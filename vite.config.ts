@@ -5,32 +5,36 @@ import ViteIcons, { ViteIconsResolver } from 'vite-plugin-icons'
 import ViteComponents from 'vite-plugin-components'
 import WindiCSS from 'vite-plugin-windicss'
 
+const r = (...args: string[]) => resolve(__dirname, ...args)
+
 export default defineConfig({
+  root: r('views'),
   resolve: {
     alias: {
-      '~/': `${resolve(__dirname, 'src')}/`,
+      '~/': `${r('views')}/`,
     },
   },
   build: {
+    outDir: r('extension/dist'),
+    emptyOutDir: false,
     rollupOptions: {
       input: {
-        popup: resolve(__dirname, 'src/popup/index.html'),
-        options: resolve(__dirname, 'src/options/index.html'),
+        popup: r('views/popup/index.html'),
+        options: r('views/options/index.html'),
       },
     },
   },
   plugins: [
     Vue(),
     ViteComponents({
+      dirs: [r('views/components')],
       // generate `components.d.ts` for ts support with Volar
       globalComponentsDeclaration: true,
-
       // auto import icons
       customComponentResolvers: [
         // https://github.com/antfu/vite-plugin-icons
         ViteIconsResolver({
           componentPrefix: '',
-          // enabledCollections: ['carbon']
         }),
       ],
     }),
@@ -39,7 +43,19 @@ export default defineConfig({
     ViteIcons(),
 
     // https://github.com/antfu/vite-plugin-windicss
-    WindiCSS(),
+    WindiCSS({
+      root: __dirname,
+    }),
+
+    // rewrite assets to use relative path
+    {
+      name: 'assets-rewrite',
+      enforce: 'post',
+      apply: 'build',
+      transformIndexHtml(html) {
+        return html.replace(/"\/assets\//g, '"../assets/')
+      },
+    },
   ],
 
   optimizeDeps: {
