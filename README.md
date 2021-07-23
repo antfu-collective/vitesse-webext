@@ -8,11 +8,13 @@ A [Vite](https://vitejs.dev/)-powered web extension ([Chrome](https://developer.
 ## Features
 
 - ⚡️ **Instant HMR** - use **Vite** on dev (no more refresh!).
-- 💚 Vue 3 - Composition API, [`<script setup>` syntax](https://github.com/vuejs/rfcs/blob/master/active-rfcs/0040-script-setup.md) and more!
+- 🥝 Vue 3 - Composition API, [`<script setup>` syntax](https://github.com/vuejs/rfcs/blob/master/active-rfcs/0040-script-setup.md) and more!
+- 💬 Effortless communications - powered by [`webext-bridge`](https://github.com/antfu/webext-bridge) and [VueUse](https://github.com/antfu/vueuse) storage.
 - 🍃 [Windi CSS](https://windicss.org/) - on-demand CSS utilities.
 - 🦾 [TypeScript](https://www.typescriptlang.org/) - type safe.
 - 📦 [Components auto importing](./views/components)
 - 🌟 [Icons](./views/components) - Access to icons from any iconset directly
+- 🌍 WebExtension - isomorphic extension for Chrome, Firefox and others.
 
 ## Pre-packed
 
