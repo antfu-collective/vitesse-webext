@@ -24,7 +24,7 @@ specifiers:
   vue: ^3.1.5
   vue-demi: ^0.11.2
   vue-global-api: ^0.2.4
-  webext-bridge: ^3.1.3
+  webext-bridge: ^3.1.4
   webextension-polyfill-ts: ^0.26.0
 
 devDependencies:
@@ -51,7 +51,7 @@ devDependencies:
   vue: 3.1.5
   vue-demi: 0.11.2_vue@3.1.5
   vue-global-api: 0.2.4_vue@3.1.5
-  webext-bridge: 3.1.3
+  webext-bridge: 3.1.4
   webextension-polyfill-ts: 0.26.0
 
 packages:
@@ -3276,8 +3276,8 @@ packages:
       '@vue/shared': 3.1.5
     dev: true
 
-  /webext-bridge/3.1.3:
-    resolution: {integrity: sha512-revHfqeGHvKbRM7YnIJ/YwXnyQadDCOxabP4mqqzEuxaLlEjXMfHGnDOMMqfrCumz4BHU0Y48P5Xo8sJsL9gVg==}
+  /webext-bridge/3.1.4:
+    resolution: {integrity: sha512-oGJe7UtCULcg74z243sFhWAgI2FDQLx0+I/SqXxLCgQF8n+tqhBru4vGqlRnAINVhZdIHLPu146Un2BqyQu2+w==}
     dependencies:
       nanoevents: 6.0.0
       serialize-error: 8.1.0
