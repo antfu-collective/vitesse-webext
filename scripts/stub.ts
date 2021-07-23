@@ -15,7 +15,7 @@ async function run() {
     let data = await fs.readFile(r(`views/${view}/index.html`), 'utf-8')
     data = data.replace('"./main.ts"', `"http://localhost:${port}/${view}/main.ts"`)
     await fs.writeFile(r(`extension/dist/${view}/index.html`), data, 'utf-8')
-    console.log(`stub ${view}`)
+    console.log(`✅ stub ${view}`)
   }
 }
 

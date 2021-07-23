@@ -1,7 +1,6 @@
-// register vue composition api globally
 import 'vue-global-api'
 import { createApp } from 'vue'
-import App from './App.vue'
+import App from './Popup.vue'
 import '../styles'
 
 const app = createApp(App)

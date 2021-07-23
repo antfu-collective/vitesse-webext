@@ -11,7 +11,7 @@ const r = (...args: string[]) => resolve(__dirname, ...args)
 export default defineConfig(({ command }) => {
   return {
     root: r('views'),
-    base: command === 'serve' ? 'http://localhost:3033' : undefined,
+    base: command === 'serve' ? 'http://localhost:3033/' : undefined,
     resolve: {
       alias: {
         '~/': `${r('views')}/`,
@@ -19,6 +19,9 @@ export default defineConfig(({ command }) => {
     },
     server: {
       port: 3303,
+      hmr: {
+        host: 'localhost',
+      },
     },
     build: {
       outDir: r('extension/dist'),

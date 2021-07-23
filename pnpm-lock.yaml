@@ -11,9 +11,11 @@ specifiers:
   '@vueuse/core': ^5.1.4
   cross-env: ^7.0.3
   eslint: ^7.31.0
+  esno: ^0.8.0
   fs-extra: ^10.0.0
   npm-run-all: ^4.1.5
   pnpm: ^6.10.3
+  rimraf: ^3.0.2
   tsup: ^4.12.5
   typescript: ^4.3.5
   vite: ^2.4.2
@@ -42,9 +44,11 @@ devDependencies:
   '@vue/compiler-sfc': 3.1.5_vue@3.1.5
   cross-env: 7.0.3
   eslint: 7.31.0
+  esno: 0.8.0
   fs-extra: 10.0.0
   npm-run-all: 4.1.5
   pnpm: 6.10.3
+  rimraf: 3.0.2
   tsup: 4.12.5_typescript@4.3.5
   typescript: 4.3.5
   vite: 2.4.3
@@ -1199,6 +1203,19 @@ packages:
       is-symbol: 1.0.4
     dev: true
 
+  /esbuild-node-loader/0.1.1:
+    resolution: {integrity: sha512-n24xYzMfKmPupUZgs0QYBr52HUSh1M1vDtBfkEVa6pdENqo5+U5WP+zaj4Iw2MinuYk1axLW8+NVutrBCkrdmA==}
+    dependencies:
+      esbuild: 0.12.15
+    dev: true
+
+  /esbuild-register/2.6.0:
+    resolution: {integrity: sha512-2u4AtnCXP5nivtIxZryiZOUcEQkOzFS7UhAqibUEmaTAThJ48gDLYTBF/Fsz+5r0hbV1jrFE6PQvPDUrKZNt/Q==}
+    dependencies:
+      esbuild: 0.12.15
+      jsonc-parser: 3.0.0
+    dev: true
+
   /esbuild/0.12.15:
     resolution: {integrity: sha512-72V4JNd2+48eOVCXx49xoSWHgC3/cCy96e7mbXKY+WOWghN00cCmlGnwVLRhRHorvv0dgCyuMYBZlM2xDM5OQw==}
     hasBin: true
@@ -1511,6 +1528,16 @@ packages:
       v8-compile-cache: 2.3.0
     transitivePeerDependencies:
       - supports-color
+    dev: true
+
+  /esno/0.8.0:
+    resolution: {integrity: sha512-zbvu/Kmv+/MznS1J3/U9fXBpnpl7N2dVkwihq1YzR4JzYfJMuwFxDQ0WcTSUX+rBXmKxbYlgj9dwbog+mJXo1Q==}
+    hasBin: true
+    dependencies:
+      cross-spawn: 7.0.3
+      esbuild: 0.12.15
+      esbuild-node-loader: 0.1.1
+      esbuild-register: 2.6.0
     dev: true
 
   /espree/6.2.1:
@@ -2101,6 +2128,10 @@ packages:
       semver: 6.3.0
     transitivePeerDependencies:
       - eslint
+    dev: true
+
+  /jsonc-parser/3.0.0:
+    resolution: {integrity: sha512-fQzRfAbIBnR0IQvftw9FJveWiHp72Fg20giDrHz6TdfB12UH/uue0D3hm57UB5KgAVuniLMCaS8P1IMj9NR7cA==}
     dev: true
 
   /jsonfile/6.1.0:
