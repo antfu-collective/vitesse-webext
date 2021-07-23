@@ -19,7 +19,7 @@ A [Vite](https://vitejs.dev/)-powered web extension ([Chrome](https://developer.
 ### Libraries
 
 - [`webextension-polyfill-ts`](https://github.com/Lusito/webextension-polyfill-ts) - WebExtension browser API Polyfill with types
-- [`crx-bridge`](https://github.com/NeekSandhu/crx-bridge) - effortlessly communication between contexts
+- [`webext-bridge`](https://github.com/antfu/webext-bridge) - effortlessly communication between contexts
 - [VueUse](https://github.com/antfu/vueuse) - collection of useful composition APIs
 - [`vue-global-api`](https://github.com/antfu/vue-global-api) - use Vue Composition API globally
 

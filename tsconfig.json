@@ -14,8 +14,7 @@
     "strictNullChecks": true,
     "forceConsistentCasingInFileNames": true,
     "types": [
-      "vite/client",
-      "vite-plugin-pages/client"
+      "vite/client"
     ],
     "paths": {
       "~/*": ["views/*"]

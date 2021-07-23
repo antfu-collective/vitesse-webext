@@ -10,7 +10,6 @@ specifiers:
   '@vue/compiler-sfc': ^3.1.5
   '@vueuse/core': ^5.1.4
   cross-env: ^7.0.3
-  crx-bridge: ^3.0.1
   eslint: ^7.31.0
   esno: ^0.8.0
   fs-extra: ^10.0.0
@@ -25,6 +24,7 @@ specifiers:
   vue: ^3.1.5
   vue-demi: ^0.11.2
   vue-global-api: ^0.2.4
+  webext-bridge: ^3.1.3
   webextension-polyfill-ts: ^0.26.0
 
 devDependencies:
@@ -37,7 +37,6 @@ devDependencies:
   '@vue/compiler-sfc': 3.1.5_vue@3.1.5
   '@vueuse/core': 5.1.4_vue@3.1.5
   cross-env: 7.0.3
-  crx-bridge: 3.0.1
   eslint: 7.31.0
   esno: 0.8.0
   fs-extra: 10.0.0
@@ -52,6 +51,7 @@ devDependencies:
   vue: 3.1.5
   vue-demi: 0.11.2_vue@3.1.5
   vue-global-api: 0.2.4_vue@3.1.5
+  webext-bridge: 3.1.3
   webextension-polyfill-ts: 0.26.0
 
 packages:
@@ -1011,15 +1011,6 @@ packages:
       path-key: 3.1.1
       shebang-command: 2.0.0
       which: 2.0.2
-    dev: true
-
-  /crx-bridge/3.0.1:
-    resolution: {integrity: sha512-zzDrB9vMCZUhjGmYeKpUDVdLxvcEnmTplJpO4kfMhYFp5j1X07kYoaXONRC7+qMThSd/2wreel9JVitq9JxU/g==}
-    dependencies:
-      oneline: 1.0.3
-      serialize-error: 2.1.0
-      tiny-uid: 1.1.1
-      webextension-polyfill-ts: 0.20.0
     dev: true
 
   /cssesc/3.0.0:
@@ -2246,6 +2237,11 @@ packages:
       thenify-all: 1.6.0
     dev: true
 
+  /nanoevents/6.0.0:
+    resolution: {integrity: sha512-0ASElaiZR21yBjhmBiRboCXeNirfIVuiKIxikn6a3H/9zUL+q2HBq+4B3Cb2UdCctoGx5YSwxTXypslD/olJKA==}
+    engines: {node: ^12.0.0 || ^14.0.0 || >=16.0.0}
+    dev: true
+
   /nanoid/3.1.23:
     resolution: {integrity: sha512-FiB0kzdP0FFVGDKlRLEQ1BgDzU87dy5NnzjeW9YZNt+/c3+q82EQDUwniSAUxp/F0gFNI1ZhKU1FqYsMuqZVnw==}
     engines: {node: ^10 || ^12 || ^13.7 || ^14 || >=15.0.1}
@@ -2362,11 +2358,6 @@ packages:
     resolution: {integrity: sha1-WDsap3WWHUsROsF9nFC6753Xa9E=}
     dependencies:
       wrappy: 1.0.2
-    dev: true
-
-  /oneline/1.0.3:
-    resolution: {integrity: sha512-KWLrLloG/ShWvvWuvmOL2jw17++ufGdbkKC2buI2Aa6AaM4AkjCtpeJZg60EK34NQVo2qu1mlPrC2uhvQgCrhQ==}
-    engines: {node: '>=6.0.0'}
     dev: true
 
   /onetime/5.1.2:
@@ -2805,9 +2796,11 @@ packages:
       lru-cache: 6.0.0
     dev: true
 
-  /serialize-error/2.1.0:
-    resolution: {integrity: sha1-ULZ51WNc34Rme9yOWa9OW4HV9go=}
-    engines: {node: '>=0.10.0'}
+  /serialize-error/8.1.0:
+    resolution: {integrity: sha512-3NnuWfM6vBYoy5gZFvHiYsVbafvI9vZv/+jlIigFn4oP4zjNPK3LhcY0xSCgeb1a5L8jO71Mit9LlNoi2UfDDQ==}
+    engines: {node: '>=10'}
+    dependencies:
+      type-fest: 0.20.2
     dev: true
 
   /shebang-command/1.2.0:
@@ -3034,10 +3027,6 @@ packages:
     resolution: {integrity: sha512-RVZSIV5IG10Hk3enotrhvz0T9em6cyHBLkH/YAZuKqd8hRkKhSfCGIcP2KUY0EPxndzANBmNllzWPwak+bheSw==}
     dependencies:
       any-promise: 1.3.0
-    dev: true
-
-  /tiny-uid/1.1.1:
-    resolution: {integrity: sha512-YRtEXpxokCLMMR46Ml/gen6jDFjZpyo9BMlEGmEpElA+zbCKtoTTikvvDTKR4Gro6tNij3ZA+60i9UiCYKKVyw==}
     dev: true
 
   /to-fast-properties/2.0.0:
@@ -3287,20 +3276,18 @@ packages:
       '@vue/shared': 3.1.5
     dev: true
 
-  /webextension-polyfill-ts/0.20.0:
-    resolution: {integrity: sha512-p/7by/+F+CuXF4PpBtqbdAFudUVe5X/PDjIqSS01zGR0GP8+XEh0YPLqj0+3trpLNom0jsiAjphfXLQubFdCqw==}
+  /webext-bridge/3.1.3:
+    resolution: {integrity: sha512-revHfqeGHvKbRM7YnIJ/YwXnyQadDCOxabP4mqqzEuxaLlEjXMfHGnDOMMqfrCumz4BHU0Y48P5Xo8sJsL9gVg==}
     dependencies:
-      webextension-polyfill: 0.6.0
+      nanoevents: 6.0.0
+      serialize-error: 8.1.0
+      webextension-polyfill-ts: 0.26.0
     dev: true
 
   /webextension-polyfill-ts/0.26.0:
     resolution: {integrity: sha512-XEFL+aYVEsm/d4RajVwP75g56c/w2aSHnPwgtUv8/nCzbLNSzRQIix6aj1xqFkA5yr7OIDkk3OD/QTnPp8ThYA==}
     dependencies:
       webextension-polyfill: 0.8.0
-    dev: true
-
-  /webextension-polyfill/0.6.0:
-    resolution: {integrity: sha512-PlYwiX8e4bNZrEeBFxbFFsLtm0SMPxJliLTGdNCA0Bq2XkWrAn2ejUd+89vZm+8BnfFB1BclJyCz3iKsm2atNg==}
     dev: true
 
   /webextension-polyfill/0.8.0:
