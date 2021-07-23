@@ -1,0 +1,13 @@
+{
+  "cSpell.words": ["Vitesse"],
+  "prettier.enable": false,
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "volar.tsPlugin": true,
+  "volar.tsPluginStatus": false,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true,
+  },
+  "files.associations": {
+    "*.css": "postcss",
+  },
+}
