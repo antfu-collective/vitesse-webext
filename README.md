@@ -55,7 +55,7 @@ A [Vite](https://vitejs.dev/)-powered web extension ([Chrome](https://developer.
 If you prefer to do it manually with the cleaner git history
 
 ```bash
-npx degit antfu/vitess-webext my-webext
+npx degit antfu/vitesse-webext my-webext
 cd my-webext
 pnpm i # If you don't have pnpm installed, run: npm install -g pnpm
 ```
