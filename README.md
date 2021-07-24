@@ -48,7 +48,7 @@ A [Vite](https://vitejs.dev/)-powered web extension ([Chrome](https://developer.
 
 ### GitHub Template
 
-[Create a repo from this template on GitHub](https://github.com/antfu/vitess-webext/generate).
+[Create a repo from this template on GitHub](https://github.com/antfu/vitesse-webext/generate).
 
 ### Clone to local
 
