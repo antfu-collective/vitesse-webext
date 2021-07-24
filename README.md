@@ -65,10 +65,12 @@ A [Vite](https://vitejs.dev/) powered WebExtension ([Chrome](https://developer.c
 
 If you prefer to do it manually with the cleaner git history
 
+> If you don't have pnpm installed, run: npm install -g pnpm
+
 ```bash
 npx degit antfu/vitesse-webext my-webext
 cd my-webext
-pnpm i # If you don't have pnpm installed, run: npm install -g pnpm
+pnpm i
 ```
 
 ## Usage
@@ -100,4 +102,4 @@ And then pack files under `extension`.
 
 ## Variants
 
-This is a variant of [Vitesse](https://github.com/antfu/vitesse), check out the [full variants list](https://github.com/antfu/vitesse#variations).
+This is a variant of [Vitesse](https://github.com/antfu/vitesse), check out the [full variations list](https://github.com/antfu/vitesse#variations).
