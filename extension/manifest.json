@@ -4,8 +4,8 @@
   "description": "[description]",
   "version": "0.0.1",
   "browser_action": {
-     "default_icon": "./assets/icon-512.png",
-     "default_popup": "./dist/popup/index.html"
+    "default_icon": "./assets/icon-512.png",
+    "default_popup": "./dist/popup/index.html"
   },
   "options_ui": {
     "page": "./dist/options/index.html",
@@ -13,31 +13,20 @@
     "chrome_style": false
   },
   "background": {
-     "scripts": ["./dist/background/index.global.js"],
-     "persistent": false
+    "scripts": ["./dist/background/index.global.js"],
+    "persistent": false
   },
-  "content_scripts": [{
-    "matches": [
-      "http://*/*",
-      "https://*/*"
-    ],
-    "js": [
-      "./dist/content/index.global.js"
-    ]
-   }
+  "content_scripts": [
+    {
+      "matches": ["http://*/*", "https://*/*"],
+      "js": ["./dist/content/index.global.js"]
+    }
   ],
   "icons": {
-     "16": "./assets/icon-512.png",
-     "48": "./assets/icon-512.png",
-     "128": "./assets/icon-512.png"
+    "16": "./assets/icon-512.png",
+    "48": "./assets/icon-512.png",
+    "128": "./assets/icon-512.png"
   },
-  "permissions": [
-     "tabs",
-     "storage",
-     "activeTab",
-     "notifications",
-     "http://*/",
-     "https://*/"
-  ],
+  "permissions": ["tabs", "storage", "activeTab", "http://*/", "https://*/"],
   "content_security_policy": "script-src 'self' http://localhost:3303; object-src 'self'"
 }
