@@ -16,7 +16,8 @@ A [Vite](https://vitejs.dev/) powered WebExtension ([Chrome](https://developer.c
 - 🦾 [TypeScript](https://www.typescriptlang.org/) - type safe
 - 📦 [Components auto importing](./views/components)
 - 🌟 [Icons](./views/components) - Access to icons from any iconset directly
-- 🌍 WebExtension - isomorphic extension for Chrome, Firefox and others
+- 🌍 WebExtension - isomorphic extension for Chrome, Firefox, and others
+- 📃 Dynamic `manifest.json` with full type support
 
 ## Pre-packed
 
@@ -81,7 +82,8 @@ pnpm i
 
 - `views` - frontend for the extension (popup and options).
 - `src` - background scripts and content scripts.
-- `extension` - extension package root, also holds `manifest.json` and assets.
+  - `manifest.ts` - manifest for the extension.
+- `extension` - extension package root, also holds assets.
 - `scripts` - development helper scripts.
 
 ### Development
@@ -102,6 +104,6 @@ pnpm build
 
 And then pack files under `extension`.
 
-## Variants
+## Variations
 
 This is a variant of [Vitesse](https://github.com/antfu/vitesse), check out the [full variations list](https://github.com/antfu/vitesse#variations).
