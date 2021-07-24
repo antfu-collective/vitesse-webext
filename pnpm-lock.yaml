@@ -24,7 +24,7 @@ specifiers:
   vue: ^3.1.5
   vue-demi: ^0.11.2
   vue-global-api: ^0.2.4
-  webext-bridge: ^3.1.4
+  webext-bridge: ^4.0.0
   webextension-polyfill-ts: ^0.26.0
 
 devDependencies:
@@ -51,7 +51,7 @@ devDependencies:
   vue: 3.1.5
   vue-demi: 0.11.2_vue@3.1.5
   vue-global-api: 0.2.4_vue@3.1.5
-  webext-bridge: 3.1.4
+  webext-bridge: 4.0.0
   webextension-polyfill-ts: 0.26.0
 
 packages:
@@ -3029,6 +3029,10 @@ packages:
       any-promise: 1.3.0
     dev: true
 
+  /tiny-uid/1.1.1:
+    resolution: {integrity: sha512-YRtEXpxokCLMMR46Ml/gen6jDFjZpyo9BMlEGmEpElA+zbCKtoTTikvvDTKR4Gro6tNij3ZA+60i9UiCYKKVyw==}
+    dev: true
+
   /to-fast-properties/2.0.0:
     resolution: {integrity: sha1-3F5pjL0HkmW8c+A3doGk5Og/YW4=}
     engines: {node: '>=4'}
@@ -3276,11 +3280,12 @@ packages:
       '@vue/shared': 3.1.5
     dev: true
 
-  /webext-bridge/3.1.4:
-    resolution: {integrity: sha512-oGJe7UtCULcg74z243sFhWAgI2FDQLx0+I/SqXxLCgQF8n+tqhBru4vGqlRnAINVhZdIHLPu146Un2BqyQu2+w==}
+  /webext-bridge/4.0.0:
+    resolution: {integrity: sha512-RO3sT0tZXjM93rweVkoBTO0p24Gk5ocuFMWgKd5BV5U0McgjrYLa+fck7tm887dm1FzwNHn1OoJoa8FGxFo+Rw==}
     dependencies:
       nanoevents: 6.0.0
       serialize-error: 8.1.0
+      tiny-uid: 1.1.1
       webextension-polyfill-ts: 0.26.0
     dev: true
 
