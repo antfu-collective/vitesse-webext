@@ -104,6 +104,10 @@ pnpm build
 
 And then pack files under `extension`.
 
+## Credits
+
+The original idea came from the [volta.net](https://volta.net) browser extension.
+
 ## Variations
 
 This is a variant of [Vitesse](https://github.com/antfu/vitesse), check out the [full variations list](https://github.com/antfu/vitesse#variations).
