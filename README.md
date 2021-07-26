@@ -106,7 +106,9 @@ And then pack files under `extension`.
 
 ## Credits
 
-The original idea came from the [volta.net](https://volta.net) browser extension.
+![](https://user-images.githubusercontent.com/11247099/127029137-6b5ad5db-76c4-4061-86ff-489911a8adfb.png)
+
+This template is originally made for the [volta.net](https://volta.net) browser extension.
 
 ## Variations
 
