@@ -8,12 +8,11 @@
     "dev": "run-p dev:*",
     "dev:prepare": "esno scripts/prepare.ts dev",
     "dev:web": "vite",
-    "dev:js": "npm run bundle:js -- --watch src",
+    "dev:js": "npm run build:js -- --watch src",
     "build": "run-s clear build:web build:prepare build:js",
     "build:prepare": "esno scripts/prepare.ts build",
     "build:web": "vite build",
-    "build:js": "npm run bundle:js -- --minify",
-    "bundle:js": "tsup src/background src/content --format iife --out-dir extension/dist --no-splitting",
+    "build:js": "tsup src/background src/content --format iife --out-dir extension/dist --no-splitting",
     "clear": "rimraf extension/dist"
   },
   "devDependencies": {
