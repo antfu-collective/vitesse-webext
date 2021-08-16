@@ -1,8 +1,10 @@
+import fs from 'fs-extra'
 import type { Manifest } from 'webextension-polyfill-ts'
-import pkg from '../package.json'
-import { isDev, port } from '../scripts/utils'
+import type PkgType from '../package.json'
+import { isDev, port, r } from '../scripts/utils'
 
 export async function getManifest(): Promise<Manifest.WebExtensionManifest> {
+  const pkg: typeof PkgType = await fs.readJSON(r('package.json'))
   // update this file to update this manifest.json
   // can also be conditional based on your need
   return {
