@@ -7,6 +7,7 @@ import WindiCSS from 'vite-plugin-windicss'
 import windiConfig from './windi.config'
 
 const port = parseInt(process.env.PORT || '') || 3303
+const isDev = process.env.NODE_ENV !== 'production'
 const r = (...args: string[]) => resolve(__dirname, ...args)
 
 export default defineConfig(({ command }) => {
@@ -27,6 +28,11 @@ export default defineConfig(({ command }) => {
     build: {
       outDir: r('extension/dist'),
       emptyOutDir: false,
+      sourcemap: isDev ? 'inline' : false,
+      // https://developer.chrome.com/docs/webstore/program_policies/#:~:text=Code%20Readability%20Requirements
+      terserOptions: {
+        mangle: false,
+      },
       rollupOptions: {
         input: {
           popup: r('views/popup/index.html'),
