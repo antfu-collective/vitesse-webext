@@ -15,7 +15,7 @@
 </template>
 
 <script setup lang="ts">
-import { browser } from 'webextension-polyfill-ts'
+import browser from 'webextension-polyfill'
 import { storageDemo } from '~/logic/storage'
 
 function openOptionsPage() {
