@@ -1,5 +1,5 @@
 import { sendMessage, onMessage } from 'webext-bridge'
-import { browser, Tabs } from 'webextension-polyfill-ts'
+import browser, { Tabs }  from 'webextension-polyfill'
 
 browser.runtime.onInstalled.addListener((): void => {
   // eslint-disable-next-line no-console

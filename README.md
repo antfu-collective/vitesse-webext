@@ -23,7 +23,7 @@ A [Vite](https://vitejs.dev/) powered WebExtension ([Chrome](https://developer.c
 
 ### WebExtension Libraries
 
-- [`webextension-polyfill-ts`](https://github.com/Lusito/webextension-polyfill-ts) - WebExtension browser API Polyfill with types
+- [`webextension-polyfill`](https://github.com/mozilla/webextension-polyfill) - WebExtension browser API Polyfill with types
 - [`webext-bridge`](https://github.com/antfu/webext-bridge) - effortlessly communication between contexts
 
 ### Vite Plugins
