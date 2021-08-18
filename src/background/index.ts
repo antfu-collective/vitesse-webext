@@ -1,5 +1,5 @@
 import { sendMessage, onMessage } from 'webext-bridge'
-import browser from 'webextension-polyfill'
+import browser, { Tabs }  from 'webextension-polyfill'
 
 browser.runtime.onInstalled.addListener((): void => {
   // eslint-disable-next-line no-console
@@ -9,16 +9,21 @@ browser.runtime.onInstalled.addListener((): void => {
 let previousTabId = 0
 
 // communication example: send previous tab title from background page
-// see shim.d.ts for type decleration
+// see shim.d.ts for type declaration
 browser.tabs.onActivated.addListener(async({ tabId }) => {
   if (!previousTabId) {
     previousTabId = tabId
     return
   }
-  const tab = await browser.tabs.get(previousTabId)
-  previousTabId = tabId
-  if (!tab)
+
+  let tab: Tabs.Tab
+
+  try {
+    tab = await browser.tabs.get(previousTabId)
+    previousTabId = tabId
+  } catch {
     return
+  }
 
   // eslint-disable-next-line no-console
   console.log('previous tab', tab)
