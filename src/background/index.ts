@@ -1,5 +1,5 @@
 import { sendMessage, onMessage } from 'webext-bridge'
-import browser, { Tabs }  from 'webextension-polyfill'
+import browser, { Tabs } from 'webextension-polyfill'
 
 browser.runtime.onInstalled.addListener((): void => {
   // eslint-disable-next-line no-console
@@ -21,7 +21,8 @@ browser.tabs.onActivated.addListener(async({ tabId }) => {
   try {
     tab = await browser.tabs.get(previousTabId)
     previousTabId = tabId
-  } catch {
+  }
+  catch {
     return
   }
 
