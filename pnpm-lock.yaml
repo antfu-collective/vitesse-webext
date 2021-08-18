@@ -5,6 +5,7 @@ specifiers:
   '@iconify/json': ^1.1.379
   '@types/fs-extra': ^9.0.12
   '@types/node': ^16.4.1
+  '@types/webextension-polyfill': ^0.8.0
   '@typescript-eslint/eslint-plugin': ^4.28.4
   '@vitejs/plugin-vue': ^1.2.5
   '@vue/compiler-sfc': ^3.1.5
@@ -27,13 +28,14 @@ specifiers:
   vue-demi: ^0.11.2
   vue-global-api: ^0.2.4
   webext-bridge: ^4.0.0
-  webextension-polyfill-ts: ^0.26.0
+  webextension-polyfill: ^0.8.0
 
 devDependencies:
   '@antfu/eslint-config': 0.7.0_eslint@7.31.0+typescript@4.3.5
   '@iconify/json': 1.1.379
   '@types/fs-extra': 9.0.12
   '@types/node': 16.4.1
+  '@types/webextension-polyfill': 0.8.0
   '@typescript-eslint/eslint-plugin': 4.28.4_eslint@7.31.0+typescript@4.3.5
   '@vitejs/plugin-vue': 1.2.5_@vue+compiler-sfc@3.1.5
   '@vue/compiler-sfc': 3.1.5_vue@3.1.5
@@ -56,7 +58,7 @@ devDependencies:
   vue-demi: 0.11.2_vue@3.1.5
   vue-global-api: 0.2.4_vue@3.1.5
   webext-bridge: 4.0.0
-  webextension-polyfill-ts: 0.26.0
+  webextension-polyfill: 0.8.0
 
 packages:
 
@@ -459,6 +461,10 @@ packages:
 
   /@types/throttle-debounce/2.1.0:
     resolution: {integrity: sha512-5eQEtSCoESnh2FsiLTxE121IiE60hnMqcb435fShf4bpLRjEu1Eoekht23y6zXS9Ts3l+Szu3TARnTsA0GkOkQ==}
+    dev: true
+
+  /@types/webextension-polyfill/0.8.0:
+    resolution: {integrity: sha512-usmQx2snpNkVl2VoOGZCdrPnfHL+CjuSFy84ZdTwQ2b2cvyygF/zGW5YI6Zywk+bfq9zmYpORO9lmdN7DknpRw==}
     dev: true
 
   /@typescript-eslint/eslint-plugin/4.28.4_b1648df9f9ba40bdeef3710a5a5af353:
@@ -3249,6 +3255,21 @@ packages:
       vue: 3.1.5
     dev: true
 
+  /vue-demi/0.11.3_vue@3.1.5:
+    resolution: {integrity: sha512-DpM0TTMpclRZDV6AIacgg837zrim/C9Zn+2ztXBs9hsESJN9vC83ztjTe4KC4HgJuVle8YUjPp7HTwWtwOHfmg==}
+    engines: {node: '>=12'}
+    hasBin: true
+    requiresBuild: true
+    peerDependencies:
+      '@vue/composition-api': ^1.0.0-rc.1
+      vue: ^3.0.0-0 || ^2.6.0
+    peerDependenciesMeta:
+      '@vue/composition-api':
+        optional: true
+    dependencies:
+      vue: 3.1.5
+    dev: true
+
   /vue-eslint-parser/7.9.0_eslint@7.31.0:
     resolution: {integrity: sha512-QBlhZ5LteDRVy2dISfQhNEmmcqph+GTaD4SH41bYzXcVHFPJ9p34zCG6QAqOZVa8PKaVgbomFnoZpGJRZi14vg==}
     engines: {node: '>=8.10'}
@@ -3270,7 +3291,7 @@ packages:
   /vue-global-api/0.2.4_vue@3.1.5:
     resolution: {integrity: sha512-Cm84AZiALt8f4CJZzPvbForTzAUYe41msnzUnRK6B7YkaDaN8g87ap8CpHWvTU0+XtyDeLLAeQoRr+uwamxfpQ==}
     dependencies:
-      vue-demi: 0.11.2_vue@3.1.5
+      vue-demi: 0.11.3_vue@3.1.5
     transitivePeerDependencies:
       - '@vue/composition-api'
       - vue

@@ -20,6 +20,7 @@
     "@iconify/json": "^1.1.379",
     "@types/fs-extra": "^9.0.12",
     "@types/node": "^16.4.1",
+    "@types/webextension-polyfill": "^0.8.0",
     "@typescript-eslint/eslint-plugin": "^4.28.4",
     "@vitejs/plugin-vue": "^1.2.5",
     "@vue/compiler-sfc": "^3.1.5",
@@ -42,6 +43,6 @@
     "vue-demi": "^0.11.2",
     "vue-global-api": "^0.2.4",
     "webext-bridge": "^4.0.0",
-    "webextension-polyfill-ts": "^0.26.0"
+    "webextension-polyfill": "^0.8.0"
   }
 }
