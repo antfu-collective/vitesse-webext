@@ -18,7 +18,7 @@ specifiers:
   kolorist: ^1.5.0
   npm-run-all: ^4.1.5
   rimraf: ^3.0.2
-  tsup: ^4.12.5
+  tsup: ^4.14.0
   typescript: ^4.3.5
   vite: ^2.4.3
   vite-plugin-components: ^0.13.2
@@ -48,7 +48,7 @@ devDependencies:
   kolorist: 1.5.0
   npm-run-all: 4.1.5
   rimraf: 3.0.2
-  tsup: 4.12.5_typescript@4.3.5
+  tsup: 4.14.0_typescript@4.3.5
   typescript: 4.3.5
   vite: 2.4.3
   vite-plugin-components: 0.13.2_vite@2.4.3
@@ -2776,6 +2776,14 @@ packages:
       fsevents: 2.3.2
     dev: true
 
+  /rollup/2.56.2:
+    resolution: {integrity: sha512-s8H00ZsRi29M2/lGdm1u8DJpJ9ML8SUOpVVBd33XNeEeL3NVaTiUcSBHzBdF3eAyR0l7VSpsuoVUGrRHq7aPwQ==}
+    engines: {node: '>=10.0.0'}
+    hasBin: true
+    optionalDependencies:
+      fsevents: 2.3.2
+    dev: true
+
   /run-parallel/1.2.0:
     resolution: {integrity: sha512-5l4VyZR86LZ/lDxZTR6jqL8AFE2S0IFLMP26AbjsLVADxHdhB/c0GUsH+y39UfCi3dzz8OlQuPmnaJOMoDHQBA==}
     dependencies:
@@ -3080,8 +3088,8 @@ packages:
     resolution: {integrity: sha512-Xni35NKzjgMrwevysHTCArtLDpPvye8zV/0E4EyYn43P7/7qvQwPh9BGkHewbMulVntbigmcT7rdX3BNo9wRJg==}
     dev: true
 
-  /tsup/4.12.5_typescript@4.3.5:
-    resolution: {integrity: sha512-3f0StcX+trOZvgaY/iU11U8HvvQ4v/LLgoP9OmxtOQVXP8e/Q8FSk69d0bXFb2pHB77CmVxvqiWdwybELQfx1A==}
+  /tsup/4.14.0_typescript@4.3.5:
+    resolution: {integrity: sha512-77rWdzhikTP9mQ34XMRzK83tw++LF6f4ox/HNERlgesB7g6g5VQ1iJlueG9O0P9HAZGVKavUwyoZv0+322p6rg==}
     hasBin: true
     peerDependencies:
       typescript: ^4.2.3
@@ -3099,7 +3107,7 @@ packages:
       joycon: 3.0.1
       postcss-load-config: 3.1.0
       resolve-from: 5.0.0
-      rollup: 2.53.3
+      rollup: 2.56.2
       sucrase: 3.20.0
       tree-kill: 1.2.2
       typescript: 4.3.5

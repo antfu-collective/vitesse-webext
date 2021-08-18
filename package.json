@@ -5,15 +5,15 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "dev": "run-p dev:*",
-    "dev:prepare": "esno scripts/prepare.ts dev",
+    "dev": "cross-env NODE_ENV=development run-p dev:*",
+    "dev:prepare": "esno scripts/prepare.ts",
     "dev:web": "vite",
     "dev:js": "npm run build:js -- --watch src",
-    "build": "run-s clear build:web build:prepare build:js",
-    "build:prepare": "esno scripts/prepare.ts build",
+    "build": "cross-env NODE_ENV=production run-s clear build:web build:prepare build:js",
+    "build:prepare": "esno scripts/prepare.ts",
     "build:web": "vite build",
-    "build:js": "tsup src/background src/content --format iife --out-dir extension/dist --no-splitting",
-    "clear": "rimraf extension/dist"
+    "build:js": "tsup",
+    "clear": "rimraf extension/dist extension/manifest.json"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^0.7.0",
@@ -33,7 +33,7 @@
     "kolorist": "^1.5.0",
     "npm-run-all": "^4.1.5",
     "rimraf": "^3.0.2",
-    "tsup": "^4.12.5",
+    "tsup": "^4.14.0",
     "typescript": "^4.3.5",
     "vite": "^2.4.3",
     "vite-plugin-components": "^0.13.2",
