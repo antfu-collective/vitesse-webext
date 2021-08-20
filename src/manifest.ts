@@ -22,7 +22,7 @@ export async function getManifest(): Promise<Manifest.WebExtensionManifest> {
       chrome_style: false,
     },
     background: {
-      scripts: ['./dist/background/index.global.js'],
+      page: './dist/background/index.html',
       persistent: false,
     },
     content_scripts: [

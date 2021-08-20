@@ -35,8 +35,9 @@ export default defineConfig(({ command }) => {
       },
       rollupOptions: {
         input: {
-          popup: r('views/popup/index.html'),
+          background: r('views/background/index.html'),
           options: r('views/options/index.html'),
+          popup: r('views/popup/index.html'),
         },
       },
     },
