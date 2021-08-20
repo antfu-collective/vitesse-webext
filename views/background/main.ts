@@ -1,6 +1,10 @@
 import { sendMessage, onMessage } from 'webext-bridge'
 import browser, { Tabs } from 'webextension-polyfill'
 
+if (import.meta.hot)
+  // @ts-expect-error for background HMR on dev
+  import('/@vite/client')
+
 browser.runtime.onInstalled.addListener((): void => {
   // eslint-disable-next-line no-console
   console.log('Extension installed')
