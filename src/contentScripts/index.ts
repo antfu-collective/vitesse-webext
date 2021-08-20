@@ -1,7 +1,24 @@
 /* eslint-disable no-console */
 import { onMessage } from 'webext-bridge'
+import { createApp } from 'vue'
+import 'vue-global-api'
+import App from './ContentScript.vue'
 
-console.info('[vitesse-webext] Hello world from content script')
+(() => {
+  const div = document.createElement('main')
+  div.style.position = 'absolute'
+  div.style.top = '0px'
+  div.style.left = '0px'
+  div.style.zIndex = '99999'
+
+  const shadowDOM = div.attachShadow({ mode: 'closed' })
+  const app = document.createElement('div')
+
+  shadowDOM.appendChild(app)
+  document.body.appendChild(div)
+
+  createApp(App, { globalWindow: window }).mount(app)
+})()
 
 // communication example: send previous tab title from background page
 onMessage('tab-prev', ({ data }) => {
