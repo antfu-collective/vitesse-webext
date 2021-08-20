@@ -14,8 +14,8 @@ A [Vite](https://vitejs.dev/) powered WebExtension ([Chrome](https://developer.c
 - 💬 Effortless communications - powered by [`webext-bridge`](https://github.com/antfu/webext-bridge) and [VueUse](https://github.com/antfu/vueuse) storage
 - 🍃 [Windi CSS](https://windicss.org/) - on-demand CSS utilities
 - 🦾 [TypeScript](https://www.typescriptlang.org/) - type safe
-- 📦 [Components auto importing](./views/components)
-- 🌟 [Icons](./views/components) - Access to icons from any iconset directly
+- 📦 [Components auto importing](./src/components)
+- 🌟 [Icons](./src/components) - Access to icons from any iconset directly
 - 🌍 WebExtension - isomorphic extension for Chrome, Firefox, and others
 - 📃 Dynamic `manifest.json` with full type support
 

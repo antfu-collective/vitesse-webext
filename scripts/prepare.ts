@@ -16,7 +16,7 @@ async function stubIndexHtml() {
 
   for (const view of views) {
     await fs.ensureDir(r(`extension/dist/${view}`))
-    let data = await fs.readFile(r(`views/${view}/index.html`), 'utf-8')
+    let data = await fs.readFile(r(`src/${view}/index.html`), 'utf-8')
     data = data
       .replace('"./main.ts"', `"http://localhost:${port}/${view}/main.ts"`)
       .replace('<div id="app"></div>', '<div id="app">Vite server did not start</div>')
@@ -34,7 +34,7 @@ writeManifest()
 
 if (isDev) {
   stubIndexHtml()
-  chokidar.watch(r('views/**/*.html'))
+  chokidar.watch(r('src/**/*.html'))
     .on('change', () => {
       stubIndexHtml()
     })

@@ -12,11 +12,11 @@ const r = (...args: string[]) => resolve(__dirname, ...args)
 
 export default defineConfig(({ command }) => {
   return {
-    root: r('views'),
+    root: r('src'),
     base: command === 'serve' ? `http://localhost:${port}/` : undefined,
     resolve: {
       alias: {
-        '~/': `${r('views')}/`,
+        '~/': `${r('src')}/`,
       },
     },
     server: {
@@ -35,16 +35,16 @@ export default defineConfig(({ command }) => {
       },
       rollupOptions: {
         input: {
-          background: r('views/background/index.html'),
-          options: r('views/options/index.html'),
-          popup: r('views/popup/index.html'),
+          background: r('src/background/index.html'),
+          options: r('src/options/index.html'),
+          popup: r('src/popup/index.html'),
         },
       },
     },
     plugins: [
       Vue(),
       ViteComponents({
-        dirs: [r('views/components')],
+        dirs: [r('src/components')],
         // generate `components.d.ts` for ts support with Volar
         globalComponentsDeclaration: true,
         // auto import icons
