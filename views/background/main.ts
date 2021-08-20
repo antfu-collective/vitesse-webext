@@ -1,3 +1,4 @@
+import '/@vite/client'
 import { sendMessage, onMessage } from 'webext-bridge'
 import browser, { Tabs } from 'webextension-polyfill'
 
