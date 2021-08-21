@@ -6,7 +6,7 @@ import App from './Content.vue'
 
 (() => {
   const div = document.createElement('main')
-  div.style.position = 'absolute'
+  div.style.position = 'fixed'
   div.style.top = '0px'
   div.style.left = '0px'
   div.style.zIndex = '99999'
