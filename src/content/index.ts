@@ -2,7 +2,7 @@
 import { onMessage } from 'webext-bridge'
 import { createApp } from 'vue'
 import 'vue-global-api'
-import App from './ContentScript.vue'
+import App from './Content.vue'
 
 (() => {
   const div = document.createElement('main')

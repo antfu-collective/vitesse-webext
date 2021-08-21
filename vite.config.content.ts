@@ -12,12 +12,12 @@ export default defineConfig(({ command }) => {
     base: undefined,
     server: undefined,
     build: {
-      outDir: r('extension/dist/contentScripts'),
+      outDir: r('extension/dist/content'),
       cssCodeSplit: false,
       emptyOutDir: false,
       sourcemap: isDev ? 'inline' : false,
       lib: {
-        entry: r('src/contentScripts/index.ts'),
+        entry: r('src/content/index.ts'),
         formats: ['es'],
       },
       rollupOptions: {
