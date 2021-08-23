@@ -1,7 +1,7 @@
 <template>
-  <div class="flex justify-center h-20 bg-white">
-    <Logo/>
-    <h2>Content Scripts works</h2>
+  <div class="flex justify-center py-5 bg-white">
+    <Logo />
+    <h2>Content script works</h2>
   </div>
 </template>
 
