@@ -54,7 +54,6 @@ A [Vite](https://vitejs.dev/) powered WebExtension ([Chrome](https://developer.c
 
 - [TypeScript](https://www.typescriptlang.org/)
 - [pnpm](https://pnpm.js.org/) - fast, disk space efficient package manager
-- [tsup](https://github.com/egoist/tsup) - Zero config TypeScript bundler powered by esbuild
 - [esno](https://github.com/antfu/esno) - TypeScript / ESNext node runtime powered by esbuild
 - [npm-run-all](https://github.com/mysticatea/npm-run-all) - Run multiple npm-scripts in parallel or sequential
 

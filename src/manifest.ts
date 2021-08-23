@@ -29,6 +29,7 @@ export async function getManifest(): Promise<Manifest.WebExtensionManifest> {
       {
         matches: ['http://*/*', 'https://*/*'],
         js: ['./dist/contentScripts/index.global.js'],
+        css: ['./dist/contentScripts/style.css'],
       },
     ],
     icons: {
