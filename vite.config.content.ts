@@ -38,7 +38,7 @@ export default defineConfig({
       config: {
         ...windiConfig,
         // disable preflight to avoid css population
-        // preflight: false,
+        preflight: false,
       },
     }),
   ],
