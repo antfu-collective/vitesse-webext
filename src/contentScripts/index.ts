@@ -11,9 +11,6 @@ onMessage('tab-prev', ({ data }) => {
 })
 
 // mount component to context window
-const container = document.createElement('div')!
-const shadowDOM = container.attachShadow?.({ mode: 'closed' }) || container
-const root = document.createElement('div')
-shadowDOM.appendChild(root)
+const container = document.createElement('div')
 document.body.appendChild(container)
-createApp(App, { globalWindow: window }).mount(root)
+createApp(App).mount(container)

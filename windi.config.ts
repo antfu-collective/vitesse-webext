@@ -6,7 +6,7 @@ export default defineConfig({
   attributify: true,
   extract: {
     include: [
-      '**/*.{vue,html}',
+      'src/**/*.{vue,html}',
     ],
   },
 })
