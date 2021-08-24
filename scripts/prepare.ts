@@ -1,7 +1,6 @@
 // generate stub index.html files for dev entry
 import fs from 'fs-extra'
 import chokidar from 'chokidar'
-import { getManifest } from '../src/manifest'
 import { r, port, isDev, log } from './utils'
 
 /**
@@ -26,6 +25,7 @@ async function stubIndexHtml() {
 }
 
 export async function writeManifest() {
+  const { getManifest } = await import(r('src/manifest.ts'))
   await fs.writeJSON(r('extension/manifest.json'), await getManifest(), { spaces: 2 })
   log('PRE', 'write manifest.json')
 }
@@ -40,6 +40,7 @@ if (isDev) {
     })
   chokidar.watch([r('src/manifest.ts'), r('package.json')])
     .on('change', () => {
+      delete require.cache[r('src/manifest.ts')]
       writeManifest()
     })
 }
