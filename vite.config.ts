@@ -57,31 +57,29 @@ export const sharedConfig = defineConfig({
   },
 })
 
-export default defineConfig(({ command }) => {
-  return {
-    base: command === 'serve' ? `http://localhost:${port}/` : undefined,
-    server: {
-      port,
-      hmr: {
-        host: 'localhost',
+export default defineConfig(({ command }) => ({
+  ...sharedConfig,
+  base: command === 'serve' ? `http://localhost:${port}/` : undefined,
+  server: {
+    port,
+    hmr: {
+      host: 'localhost',
+    },
+  },
+  build: {
+    outDir: r('extension/dist'),
+    emptyOutDir: false,
+    sourcemap: isDev ? 'inline' : false,
+    // https://developer.chrome.com/docs/webstore/program_policies/#:~:text=Code%20Readability%20Requirements
+    terserOptions: {
+      mangle: false,
+    },
+    rollupOptions: {
+      input: {
+        background: r('src/background/index.html'),
+        options: r('src/options/index.html'),
+        popup: r('src/popup/index.html'),
       },
     },
-    build: {
-      outDir: r('extension/dist'),
-      emptyOutDir: false,
-      sourcemap: isDev ? 'inline' : false,
-      // https://developer.chrome.com/docs/webstore/program_policies/#:~:text=Code%20Readability%20Requirements
-      terserOptions: {
-        mangle: false,
-      },
-      rollupOptions: {
-        input: {
-          background: r('src/background/index.html'),
-          options: r('src/options/index.html'),
-          popup: r('src/popup/index.html'),
-        },
-      },
-    },
-    ...sharedConfig,
-  }
-})
+  },
+}))

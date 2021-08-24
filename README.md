@@ -16,6 +16,7 @@ A [Vite](https://vitejs.dev/) powered WebExtension ([Chrome](https://developer.c
 - 🦾 [TypeScript](https://www.typescriptlang.org/) - type safe
 - 📦 [Components auto importing](./src/components)
 - 🌟 [Icons](./src/components) - Access to icons from any iconset directly
+- 🖥 Content Script - Use Vue even in content script
 - 🌍 WebExtension - isomorphic extension for Chrome, Firefox, and others
 - 📃 Dynamic `manifest.json` with full type support
 

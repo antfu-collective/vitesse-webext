@@ -2,12 +2,11 @@ import { defineConfig } from 'vite'
 import { sharedConfig } from './vite.config'
 import { r, isDev } from './scripts/utils'
 
+// bundling the content script using Vite
 export default defineConfig({
   build: {
     watch: isDev
-      ? {
-        include: r('src/contentScripts/**'),
-      }
+      ? { include: r('src/contentScripts') }
       : undefined,
     outDir: r('extension/dist/contentScripts'),
     cssCodeSplit: false,
