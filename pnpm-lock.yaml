@@ -20,13 +20,12 @@ specifiers:
   rimraf: ^3.0.2
   typescript: ^4.3.5
   unplugin-auto-import: ^0.1.3
-  vite: ^2.5.1
+  vite: 2.4.3
   vite-plugin-components: ^0.13.2
   vite-plugin-icons: ^0.6.5
   vite-plugin-windicss: ^1.2.8
   vue: ^3.2.4
   vue-demi: ^0.11.3
-  vue-global-api: ^0.4.1
   webext-bridge: ^4.1.1
   webextension-polyfill: ^0.8.0
 
@@ -49,14 +48,13 @@ devDependencies:
   npm-run-all: 4.1.5
   rimraf: 3.0.2
   typescript: 4.3.5
-  unplugin-auto-import: 0.1.3_vite@2.5.1
-  vite: 2.5.1
-  vite-plugin-components: 0.13.2_vite@2.5.1
+  unplugin-auto-import: 0.1.3_vite@2.4.3
+  vite: 2.4.3
+  vite-plugin-components: 0.13.2_vite@2.4.3
   vite-plugin-icons: 0.6.5_927b6aa92e35a8f1cb1822fc1487e830
-  vite-plugin-windicss: 1.2.8_vite@2.5.1
+  vite-plugin-windicss: 1.2.8_vite@2.4.3
   vue: 3.2.4
   vue-demi: 0.11.3_vue@3.2.4
-  vue-global-api: 0.4.1_vue@3.2.4
   webext-bridge: 4.1.1
   webextension-polyfill: 0.8.0
 
@@ -1293,10 +1291,6 @@ packages:
       eslint-plugin-import: 2.24.1_eslint@7.32.0
       eslint-plugin-node: 11.1.0_eslint@7.32.0
       eslint-plugin-promise: 5.1.0_eslint@7.32.0
-    dev: true
-
-  /eslint-config-vue-global-api/0.4.1:
-    resolution: {integrity: sha512-mJTiKBGLe1FXmEifYzCQzUTBpFv8OtfYzP6PAOuVRf+3hkGLMeiDh4bVzZEaJfdExtc8mPw9vp35YSLhwTselQ==}
     dev: true
 
   /eslint-import-resolver-node/0.3.6:
@@ -3053,19 +3047,19 @@ packages:
     engines: {node: '>= 10.0.0'}
     dev: true
 
-  /unplugin-auto-import/0.1.3_vite@2.5.1:
+  /unplugin-auto-import/0.1.3_vite@2.4.3:
     resolution: {integrity: sha512-lNrOTxa1fjkBHwkY47b8Cmtm0jmM/iI333DCcXiVyXYwLLULOOqo5eXUjjUyIGbnISJsJ8fhhPxYIwPx8JgaVg==}
     dependencies:
       '@antfu/utils': 0.2.4
       '@rollup/pluginutils': 4.1.1
-      unplugin: 0.0.8_vite@2.5.1
+      unplugin: 0.0.8_vite@2.4.3
     transitivePeerDependencies:
       - rollup
       - vite
       - webpack
     dev: true
 
-  /unplugin/0.0.8_vite@2.5.1:
+  /unplugin/0.0.8_vite@2.4.3:
     resolution: {integrity: sha512-eN+JfXcV8Dq9FmnXiU8PHTsBjhyUazlztLh8L2eMLHnh4Gq1oXGkfcKdEQa8FBho5Be6IW2CsDFXwJISK1MiyQ==}
     peerDependencies:
       rollup: ^2.50.0
@@ -3079,7 +3073,7 @@ packages:
       webpack:
         optional: true
     dependencies:
-      vite: 2.5.1
+      vite: 2.4.3
       webpack-virtual-modules: 0.4.3
     dev: true
 
@@ -3104,7 +3098,7 @@ packages:
       spdx-expression-parse: 3.0.1
     dev: true
 
-  /vite-plugin-components/0.13.2_vite@2.5.1:
+  /vite-plugin-components/0.13.2_vite@2.4.3:
     resolution: {integrity: sha512-Fv5iTlZUvqUUjODdAkTadijobcys+SvrtYclj27/SCE7b4LtwNySd+nHvJcGI/GsL8npTdccj2IRwGsWLrTcvQ==}
     peerDependencies:
       vite: ^2.0.0
@@ -3113,7 +3107,7 @@ packages:
       fast-glob: 3.2.7
       magic-string: 0.25.7
       minimatch: 3.0.4
-      vite: 2.5.1
+      vite: 2.4.3
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -3136,7 +3130,7 @@ packages:
       vue-template-es2015-compiler: 1.9.1
     dev: true
 
-  /vite-plugin-windicss/1.2.8_vite@2.5.1:
+  /vite-plugin-windicss/1.2.8_vite@2.4.3:
     resolution: {integrity: sha512-KLoFfsEh5RAyw2OjW+lrIdgkRAMa9KM1sKPYf8pYgVIj4PL6xBbJlbvWOZnZdW1rFjLtF3KzPT35HEmj6MV8XQ==}
     peerDependencies:
       vite: ^2.0.1
@@ -3144,15 +3138,15 @@ packages:
       '@windicss/plugin-utils': 1.2.8
       chalk: 4.1.2
       debug: 4.3.2
-      vite: 2.5.1
+      vite: 2.4.3
       windicss: 3.1.7
     transitivePeerDependencies:
       - supports-color
     dev: true
 
-  /vite/2.5.1:
-    resolution: {integrity: sha512-FwmLbbz8MB1pBs9dKoRDgpiqoijif8hSK1+NNUYc12/cnf+pM2UFhhQ1rcpXgbMhm/5c2USZdVAf0FSkSxaFDA==}
-    engines: {node: '>=12.2.0'}
+  /vite/2.4.3:
+    resolution: {integrity: sha512-iT6NPeiUUZ2FkzC3eazytOEMRaM4J+xgRQcNcpRcbmfYjakCFP4WKPJpeEz1U5JEKHAtwv3ZBQketQUFhFU3ng==}
+    engines: {node: '>=12.0.0'}
     hasBin: true
     dependencies:
       esbuild: 0.12.21
@@ -3194,16 +3188,6 @@ packages:
       semver: 6.3.0
     transitivePeerDependencies:
       - supports-color
-    dev: true
-
-  /vue-global-api/0.4.1_vue@3.2.4:
-    resolution: {integrity: sha512-283vpYOhVHJCpMkjNVEwZdgaAb+Y93zFaXGAWTI378MLoNuwQydjD/BAy1e81QYEmyA+JbxqcmMZVWcM9rbriw==}
-    dependencies:
-      eslint-config-vue-global-api: 0.4.1
-      vue-demi: 0.11.3_vue@3.2.4
-    transitivePeerDependencies:
-      - '@vue/composition-api'
-      - vue
     dev: true
 
   /vue-template-es2015-compiler/1.9.1:
