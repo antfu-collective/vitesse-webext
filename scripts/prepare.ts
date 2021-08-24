@@ -1,4 +1,5 @@
 // generate stub index.html files for dev entry
+import { execSync } from 'child_process'
 import fs from 'fs-extra'
 import chokidar from 'chokidar'
 import { r, port, isDev, log } from './utils'
@@ -24,10 +25,8 @@ async function stubIndexHtml() {
   }
 }
 
-export async function writeManifest() {
-  const { getManifest } = await import(r('src/manifest.ts'))
-  await fs.writeJSON(r('extension/manifest.json'), await getManifest(), { spaces: 2 })
-  log('PRE', 'write manifest.json')
+function writeManifest() {
+  execSync('npx esno ./scripts/manifest.ts', { stdio: 'inherit' })
 }
 
 writeManifest()
