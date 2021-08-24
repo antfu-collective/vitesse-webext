@@ -1,4 +1,4 @@
-import { defineConfig } from 'vite'
+import { defineConfig, UserConfig } from 'vite'
 import Vue from '@vitejs/plugin-vue'
 import ViteIcons, { ViteIconsResolver } from 'vite-plugin-icons'
 import ViteComponents from 'vite-plugin-components'
@@ -7,7 +7,7 @@ import AutoImport from 'unplugin-auto-import/vite'
 import windiConfig from './windi.config'
 import { r, port, isDev } from './scripts/utils'
 
-export const sharedConfig = defineConfig({
+export const sharedConfig: UserConfig = {
   root: r('src'),
   resolve: {
     alias: {
@@ -40,11 +40,6 @@ export const sharedConfig = defineConfig({
     // https://github.com/antfu/vite-plugin-icons
     ViteIcons(),
 
-    // https://github.com/antfu/vite-plugin-windicss
-    WindiCSS({
-      config: windiConfig,
-    }),
-
     // rewrite assets to use relative path
     {
       name: 'assets-rewrite',
@@ -64,7 +59,7 @@ export const sharedConfig = defineConfig({
       'vue-demi',
     ],
   },
-})
+}
 
 export default defineConfig(({ command }) => ({
   ...sharedConfig,
@@ -91,4 +86,12 @@ export default defineConfig(({ command }) => ({
       },
     },
   },
+  plugins: [
+    ...sharedConfig.plugins!,
+
+    // https://github.com/antfu/vite-plugin-windicss
+    WindiCSS({
+      config: windiConfig,
+    }),
+  ],
 }))

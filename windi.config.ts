@@ -1,3 +1,4 @@
+import { resolve } from 'path'
 import { defineConfig } from 'windicss/helpers'
 
 export default defineConfig({
@@ -6,7 +7,7 @@ export default defineConfig({
   attributify: true,
   extract: {
     include: [
-      'src/**/*.{vue,html}',
+      resolve(__dirname, 'src/**/*.{vue,html}'),
     ],
   },
 })
