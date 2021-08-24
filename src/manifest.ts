@@ -3,11 +3,12 @@ import type { Manifest } from 'webextension-polyfill'
 import type PkgType from '../package.json'
 import { isDev, port, r } from '../scripts/utils'
 
-export async function getManifest(): Promise<Manifest.WebExtensionManifest> {
-  const pkg: typeof PkgType = await fs.readJSON(r('package.json'))
+export async function getManifest() {
+  const pkg = await fs.readJSON(r('package.json')) as typeof PkgType
+
   // update this file to update this manifest.json
   // can also be conditional based on your need
-  return {
+  const manifest: Manifest.WebExtensionManifest = {
     manifest_version: 2,
     name: pkg.displayName || pkg.name,
     version: pkg.version,
@@ -25,13 +26,6 @@ export async function getManifest(): Promise<Manifest.WebExtensionManifest> {
       page: './dist/background/index.html',
       persistent: false,
     },
-    content_scripts: [
-      {
-        matches: ['http://*/*', 'https://*/*'],
-        js: ['./dist/contentScripts/index.global.js'],
-        css: ['./dist/contentScripts/style.css'],
-      },
-    ],
     icons: {
       16: './assets/icon-512.png',
       48: './assets/icon-512.png',
@@ -44,9 +38,23 @@ export async function getManifest(): Promise<Manifest.WebExtensionManifest> {
       'http://*/',
       'https://*/',
     ],
-    // this is required on dev for Vite script to load
-    content_security_policy: isDev
-      ? `script-src \'self\' http://localhost:${port}; object-src \'self\'`
-      : undefined,
+    content_scripts: [{
+      matches: ['http://*/*', 'https://*/*'],
+      js: ['./dist/contentScripts/index.global.js'],
+      css: ['./dist/contentScripts/style.css'],
+    }],
   }
+
+  if (isDev) {
+    // for content script, as browsers will cache them for each reload,
+    // we use a background script to always inject the latest version
+    // see src/background/contentScriptHMR.ts
+    delete manifest.content_scripts
+    manifest.permissions?.push('webNavigation')
+
+    // this is required on dev for Vite script to load
+    manifest.content_security_policy = `script-src \'self\' http://localhost:${port}; object-src \'self\'`
+  }
+
+  return manifest
 }
