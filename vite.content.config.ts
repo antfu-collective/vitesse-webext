@@ -4,9 +4,11 @@ import { r, isDev } from './scripts/utils'
 
 export default defineConfig({
   build: {
-    watch: {
-      include: r('src/contentScripts/**'),
-    },
+    watch: isDev
+      ? {
+        include: r('src/contentScripts/**'),
+      }
+      : undefined,
     outDir: r('extension/dist/contentScripts'),
     cssCodeSplit: false,
     emptyOutDir: false,
