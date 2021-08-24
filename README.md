@@ -31,10 +31,10 @@ A [Vite](https://vitejs.dev/) powered WebExtension ([Chrome](https://developer.c
 
 - [`vite-plugin-components`](https://github.com/antfu/vite-plugin-components) - components auto import
 - [`vite-plugin-windicss`](https://github.com/antfu/vite-plugin-windicss) - WindiCSS support
+- [`unplugin-auto-import`](https://github.com/antfu/unplugin-auto-import) - Directly use Vue Composition API and others without importing
 
 ### Vue Plugins
 
-- [`vue-global-api`](https://github.com/antfu/vue-global-api) - use Vue Composition API globally
 - [VueUse](https://github.com/antfu/vueuse) - collection of useful composition APIs
 
 ### UI Frameworks
