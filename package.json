@@ -8,7 +8,7 @@
     "dev": "npm run clear && cross-env NODE_ENV=development run-p dev:*",
     "dev:prepare": "esno scripts/prepare.ts",
     "dev:web": "vite",
-    "dev:js": "npm run build:js",
+    "dev:js": "npm run build:js -- --mode development",
     "build": "cross-env NODE_ENV=production run-s clear build:web build:prepare build:js",
     "build:prepare": "esno scripts/prepare.ts",
     "build:web": "vite build",

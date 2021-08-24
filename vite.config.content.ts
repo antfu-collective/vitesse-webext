@@ -6,7 +6,12 @@ import { r, isDev } from './scripts/utils'
 export default defineConfig({
   build: {
     watch: isDev
-      ? { include: r('src/contentScripts') }
+      ? {
+        include: [
+          r('src/contentScripts/**/*'),
+          r('src/components/**/*'),
+        ],
+      }
       : undefined,
     outDir: r('extension/dist/contentScripts'),
     cssCodeSplit: false,
