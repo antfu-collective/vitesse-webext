@@ -14,14 +14,10 @@ onMessage('tab-prev', ({ data }) => {
 // mount component to context window
 const container = document.createElement('div')
 const shadowDOM = container.attachShadow?.({ mode: 'closed' }) || container
-const styleUrl = browser.extension.getURL('dist/contentScripts/style.css')
-fetch(styleUrl, { method: 'GET' })
-  .then(res => res.text())
-  .then((css) => {
-    const _stylecContainer = document.createElement('div')
-    _stylecContainer.innerHTML = `<style>${css}</style>`
-    shadowDOM.appendChild(_stylecContainer)
-  })
+const linkElem = document.createElement('link')
+linkElem.setAttribute('rel', 'stylesheet')
+linkElem.setAttribute('href', browser.extension.getURL('dist/contentScripts/style.css'))
+shadowDOM.appendChild(linkElem)
 const root = document.createElement('div')
 shadowDOM.appendChild(root)
 document.body.appendChild(container)
