@@ -10,3 +10,4 @@ dist
 dist-ssr
 extension/manifest.json
 node_modules
+src/auto-imports.d.ts
