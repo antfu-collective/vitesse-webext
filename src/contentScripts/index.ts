@@ -4,6 +4,8 @@ import browser from 'webextension-polyfill'
 import { createApp } from 'vue'
 import App from './Content.vue'
 
+const isDev = browser.runtime.getManifest()?.content_security_policy?.includes('http://localhost') === true
+
 console.info('[vitesse-webext] Hello world from content script')
 
 // communication example: send previous tab title from background page
@@ -13,7 +15,7 @@ onMessage('tab-prev', ({ data }) => {
 
 // mount component to context window
 const container = document.createElement('div')
-const shadowDOM = container.attachShadow?.({ mode: 'open' }) || container
+const shadowDOM = container.attachShadow?.({ mode: isDev ? 'open' : 'closed' }) || container
 const linkElem = document.createElement('link')
 linkElem.setAttribute('rel', 'stylesheet')
 linkElem.setAttribute('href', browser.extension.getURL('dist/contentScripts/style.css'))
