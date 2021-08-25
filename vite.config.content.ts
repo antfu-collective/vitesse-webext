@@ -7,6 +7,9 @@ import windiConfig from './windi.config'
 // bundling the content script using Vite
 export default defineConfig({
   ...sharedConfig,
+  define: {
+    __DEV__: isDev,
+  },
   build: {
     watch: isDev
       ? {

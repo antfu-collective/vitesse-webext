@@ -4,7 +4,7 @@ import browser from 'webextension-polyfill'
 import { createApp } from 'vue'
 import App from './Content.vue'
 
-const isDev = browser.runtime.getManifest()?.content_security_policy?.includes('http://localhost') === true
+declare const __DEV__: Record<string, any>
 
 console.info('[vitesse-webext] Hello world from content script')
 
@@ -15,7 +15,7 @@ onMessage('tab-prev', ({ data }) => {
 
 // mount component to context window
 const container = document.createElement('div')
-const shadowDOM = container.attachShadow?.({ mode: isDev ? 'open' : 'closed' }) || container
+const shadowDOM = container.attachShadow?.({ mode: __DEV__ ? 'open' : 'closed' }) || container
 const linkElem = document.createElement('link')
 linkElem.setAttribute('rel', 'stylesheet')
 linkElem.setAttribute('href', browser.extension.getURL('dist/contentScripts/style.css'))
