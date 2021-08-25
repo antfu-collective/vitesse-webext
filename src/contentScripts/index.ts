@@ -4,7 +4,7 @@ import browser from 'webextension-polyfill'
 import { createApp } from 'vue'
 import App from './Content.vue'
 
-declare const __DEV__: Boolean
+declare const __DEV__: boolean
 
 console.info('[vitesse-webext] Hello world from content script')
 
@@ -12,9 +12,6 @@ console.info('[vitesse-webext] Hello world from content script')
 onMessage('tab-prev', ({ data }) => {
   console.log(`[vitesse-webext] Navigate from page "${data.title}"`)
 })
-
-console.log(__DEV__)
-console.log(typeof __DEV__)
 
 // mount component to context window
 const container = document.createElement('div')
