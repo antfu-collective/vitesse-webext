@@ -1,10 +1,12 @@
 .DS_Store
+.idea/
 .vite-ssg-dist
 .vite-ssg-temp
 *.local
+*.log
+components.d.ts
 dist
 dist-ssr
-node_modules
-.idea/
-*.log
 extension/manifest.json
+node_modules
+src/auto-imports.d.ts
