@@ -39,7 +39,6 @@ if (isDev) {
     })
   chokidar.watch([r('src/manifest.ts'), r('package.json')])
     .on('change', () => {
-      delete require.cache[r('src/manifest.ts')]
       writeManifest()
     })
 }
