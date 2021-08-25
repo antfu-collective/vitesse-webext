@@ -9,10 +9,11 @@
     "dev:prepare": "esno scripts/prepare.ts",
     "dev:web": "vite",
     "dev:js": "npm run build:js -- --mode development",
-    "build": "cross-env NODE_ENV=production run-s clear build:web build:prepare build:js",
+    "build": "cross-env NODE_ENV=production run-s clear build:web build:prepare build:js build:crx",
     "build:prepare": "esno scripts/prepare.ts",
     "build:web": "vite build",
     "build:js": "vite build --config vite.config.content.ts",
+    "build:crx": "crx pack extension -o ./extension.crx",
     "clear": "rimraf extension/dist extension/manifest.json",
     "lint": "eslint '**/*.{json,ts,js,vue}'"
   },
@@ -44,5 +45,8 @@
     "vue-demi": "^0.11.3",
     "webext-bridge": "^4.1.1",
     "webextension-polyfill": "^0.8.0"
+  },
+  "dependencies": {
+    "crx": "^5.0.1"
   }
 }
