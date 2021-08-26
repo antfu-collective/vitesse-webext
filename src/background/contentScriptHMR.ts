@@ -1,4 +1,7 @@
 import browser from 'webextension-polyfill'
+import { detect } from 'detect-browser'
+
+const isFirefox = detect()?.name === 'firefox'
 
 browser.webNavigation.onCommitted.addListener(({ tabId, frameId }) => {
   // Filter out non main window events.
@@ -6,7 +9,7 @@ browser.webNavigation.onCommitted.addListener(({ tabId, frameId }) => {
 
   // inject the latest scripts
   browser.tabs.executeScript(tabId, {
-    file: '/dist/contentScripts/index.global.js',
+    file: isFirefox ? '/' : './' + 'dist/contentScripts/index.global.js',
     runAt: 'document_end',
   }).catch(error => console.error(error))
 })
