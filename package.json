@@ -30,7 +30,6 @@
     "chokidar": "^3.5.2",
     "cross-env": "^7.0.3",
     "crx": "^5.0.1",
-    "detect-browser": "^5.2.0",
     "eslint": "^7.32.0",
     "esno": "^0.9.1",
     "fs-extra": "^10.0.0",

@@ -1,8 +1,7 @@
 /* eslint-disable no-console */
 import browser from 'webextension-polyfill'
-import { detect } from 'detect-browser'
 
-const isFirefox = detect()?.name === 'firefox'
+const isFirefox = navigator.userAgent.includes('Firefox')
 
 // Firefox fetchs files from cache instead of reloading changes from disk, hmr will not work as Chromium based browser
 browser.webNavigation.onCommitted.addListener(({ tabId, frameId }) => {

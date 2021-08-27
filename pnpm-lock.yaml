@@ -13,7 +13,6 @@ specifiers:
   chokidar: ^3.5.2
   cross-env: ^7.0.3
   crx: ^5.0.1
-  detect-browser: ^5.2.0
   eslint: ^7.32.0
   esno: ^0.9.1
   fs-extra: ^10.0.0
@@ -44,7 +43,6 @@ devDependencies:
   chokidar: 3.5.2
   cross-env: 7.0.3
   crx: 5.0.1
-  detect-browser: 5.2.0
   eslint: 7.32.0
   esno: 0.9.1
   fs-extra: 10.0.0
@@ -1272,10 +1270,6 @@ packages:
     engines: {node: '>= 0.4'}
     dependencies:
       object-keys: 1.1.1
-    dev: true
-
-  /detect-browser/5.2.0:
-    resolution: {integrity: sha512-tr7XntDAu50BVENgQfajMLzacmSe34D+qZc4zjnniz0ZVuw/TZcLcyxHQjYpJTM36sGEkZZlYLnIM1hH7alTMA==}
     dev: true
 
   /dir-glob/3.0.1:
