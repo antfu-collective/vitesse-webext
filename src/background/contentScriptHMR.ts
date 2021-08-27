@@ -14,7 +14,6 @@ if (!isFirefox) {
     browser.tabs.executeScript(tabId, {
       file: './dist/contentScripts/index.global.js',
       runAt: 'document_end',
-    }).then(() => { console.log('contentScripts reloaded.') })
-      .catch(error => console.error(error))
+    }).catch(error => console.error(error))
   })
 }
