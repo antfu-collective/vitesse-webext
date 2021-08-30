@@ -106,7 +106,7 @@ As alternative, you can run firefox with command:
 pnpm run start:firefox
 ```
 
-`web-ext` will auto reload the extension when `extension/` files is changed.
+`web-ext` auto reload the extension when `extension/` files changed.
 
 ### Build
 
