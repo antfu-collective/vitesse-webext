@@ -58,6 +58,7 @@ A [Vite](https://vitejs.dev/) powered WebExtension ([Chrome](https://developer.c
 - [pnpm](https://pnpm.js.org/) - fast, disk space efficient package manager
 - [esno](https://github.com/antfu/esno) - TypeScript / ESNext node runtime powered by esbuild
 - [npm-run-all](https://github.com/mysticatea/npm-run-all) - Run multiple npm-scripts in parallel or sequential
+- [web-ext](https://github.com/mozilla/web-ext) - Streamlined experience for developing web extensions
 
 ## Use the Template
 
@@ -93,7 +94,19 @@ pnpm i
 pnpm dev
 ```
 
-Then **load extension in browser with the `extension/` folder**,
+Then **load extension in browser with the `extension/` folder**.
+
+For firefox extension developers, just load `extension/` folder to browser,
+
+contentScript hmr not work as Chromium based browser.
+
+As alternative, you can launch firefox with `web-ext` from command:
+
+```bash
+pnpm run start:firefox
+```
+
+`web-ext` will reload the extension when `extension/` files is changed.
 
 ### Build
 
@@ -103,7 +116,9 @@ To build the extension, run
 pnpm build
 ```
 
-And then pack files under `extension`.
+And then pack files under `extension`,
+
+you can upload `extension.crx` or `extension.xpi` to appropriate extension store.
 
 ## Credits
 
