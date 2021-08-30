@@ -1,5 +1,5 @@
 import { sendMessage, onMessage } from 'webext-bridge'
-import browser, { Tabs } from 'webextension-polyfill'
+import { Tabs } from 'webextension-polyfill'
 
 // only on dev mode
 if (import.meta.hot) {

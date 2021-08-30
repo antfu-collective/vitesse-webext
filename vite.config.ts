@@ -21,6 +21,11 @@ export const sharedConfig: UserConfig = {
     AutoImport({
       imports: [
         'vue',
+        {
+          'webextension-polyfill': [
+            ['default', 'browser'],
+          ],
+        },
       ],
       dts: r('src/auto-imports.d.ts'),
     }),

@@ -33,9 +33,11 @@ A [Vite](https://vitejs.dev/) powered WebExtension ([Chrome](https://developer.c
 
 ### Vite Plugins
 
-- [`vite-plugin-components`](https://github.com/antfu/vite-plugin-components) - components auto import
+- [`unplugin-auto-import`](https://github.com/antfu/unplugin-auto-import) - Directly use `browser` and Vue Composition API without importing
+- [`unplugin-vue-components`](https://github.com/antfu/vite-plugin-components) - components auto import
+- [`unplugin-icons`](https://github.com/antfu/unplugin-icons) - icons as components
+  - [Iconify](https://iconify.design) - use icons from any icon sets [🔍Icônes](https://icones.netlify.app/)
 - [`vite-plugin-windicss`](https://github.com/antfu/vite-plugin-windicss) - WindiCSS support
-- [`unplugin-auto-import`](https://github.com/antfu/unplugin-auto-import) - Directly use Vue Composition API and others without importing
 
 ### Vue Plugins
 
@@ -44,11 +46,6 @@ A [Vite](https://vitejs.dev/) powered WebExtension ([Chrome](https://developer.c
 ### UI Frameworks
 
 - [Windi CSS](https://github.com/windicss/windicss) - next generation utility-first CSS framework
-
-### Icons
-
-- [Iconify](https://iconify.design) - use icons from any icon sets [🔍Icônes](https://icones.netlify.app/)
-- [`vite-plugin-icons`](https://github.com/antfu/vite-plugin-icons) - icons as Vue components
 
 ### Coding Style
 

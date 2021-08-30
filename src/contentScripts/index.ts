@@ -1,6 +1,5 @@
 /* eslint-disable no-console */
 import { onMessage } from 'webext-bridge'
-import browser from 'webextension-polyfill'
 import { createApp } from 'vue'
 import App from './Content.vue'
 
