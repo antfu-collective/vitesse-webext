@@ -1,12 +1,12 @@
-/* eslint-disable no-console */
 import browser from 'webextension-polyfill'
+import { isFirefox } from '~/env'
 
-const isFirefox = navigator.userAgent.includes('Firefox')
-
-// Firefox fetchs files from cache instead of reloading changes from disk, hmr will not work as Chromium based browser
+// Firefox fetch files from cache instead of reloading changes from disk,
+// hmr will not work as Chromium based browser
 browser.webNavigation.onCommitted.addListener(({ tabId, frameId }) => {
   // Filter out non main window events.
-  if (frameId !== 0) return
+  if (frameId !== 0)
+    return
 
   // inject the latest scripts
   browser.tabs.executeScript(tabId, {
