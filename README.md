@@ -100,13 +100,13 @@ For firefox extension developers, just load `extension/` folder to browser,
 
 contentScript hmr not work as Chromium based browser.
 
-As alternative, you can launch firefox with `web-ext` from command:
+As alternative, you can run firefox with command:
 
 ```bash
 pnpm run start:firefox
 ```
 
-`web-ext` will reload the extension when `extension/` files is changed.
+`web-ext` will auto reload the extension when `extension/` files is changed.
 
 ### Build
 
