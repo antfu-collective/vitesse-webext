@@ -96,14 +96,12 @@ pnpm dev
 
 Then **load extension in browser with the `extension/` folder**.
 
-For firefox extension developers, just load `extension/` folder to browser,
-
-contentScript hmr not work as Chromium based browser.
+For firefox extension developers, just load `extension/` folder to browser, contentScript hmr not work as Chromium based browser.
 
 As alternative, you can run firefox with command:
 
 ```bash
-pnpm run start:firefox
+pnpm start:firefox
 ```
 
 `web-ext` auto reload the extension when `extension/` files changed.
@@ -116,9 +114,7 @@ To build the extension, run
 pnpm build
 ```
 
-And then pack files under `extension`,
-
-you can upload `extension.crx` or `extension.xpi` to appropriate extension store.
+And then pack files under `extension`, you can upload `extension.crx` or `extension.xpi` to appropriate extension store.
 
 ## Credits
 
