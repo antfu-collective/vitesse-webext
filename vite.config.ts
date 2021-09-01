@@ -63,8 +63,6 @@ export const sharedConfig: UserConfig = {
     ],
     exclude: [
       'vue-demi',
-      '@vite/client',
-      '@vite/env',
     ],
   },
 }
