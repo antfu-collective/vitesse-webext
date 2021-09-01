@@ -96,9 +96,7 @@ pnpm dev
 
 Then **load extension in browser with the `extension/` folder**.
 
-For firefox extension developers, just load `extension/` folder to browser, contentScript hmr not work as Chromium based browser.
-
-As alternative, you can run firefox with command:
+For Firefox developers, you can run the following command instead:
 
 ```bash
 pnpm start:firefox
