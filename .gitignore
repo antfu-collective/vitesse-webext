@@ -6,6 +6,7 @@
 *.local
 *.log
 *.pem
+*.xpi
 dist
 dist-ssr
 extension/manifest.json
