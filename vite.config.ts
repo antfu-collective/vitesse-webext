@@ -15,6 +15,9 @@ export const sharedConfig: UserConfig = {
       '~/': `${r('src')}/`,
     },
   },
+  define: {
+    __DEV__: isDev,
+  },
   plugins: [
     Vue(),
 
