@@ -1,5 +1,18 @@
 import { isFirefox } from '~/env'
 
+const forbiddenProtocols = [
+  'chrome-extension://',
+  'chrome-search://',
+  'chrome://',
+  'devtools://',
+  'edge://',
+  'https://chrome.google.com/webstore',
+]
+
+function isForbiddenUrl(url: string): boolean {
+  return forbiddenProtocols.some(protocol => url.startsWith(protocol))
+}
+
 // Firefox fetch files from cache instead of reloading changes from disk,
 // hmr will not work as Chromium based browser
 browser.webNavigation.onCommitted.addListener(({ tabId, frameId, url }) => {
@@ -7,7 +20,7 @@ browser.webNavigation.onCommitted.addListener(({ tabId, frameId, url }) => {
   if (frameId !== 0)
     return
 
-  if (url.startsWith('chrome://') || url.startsWith('chrome-extension://') || url.startsWith('devtools://'))
+  if (isForbiddenUrl(url))
     return
 
   // inject the latest scripts
