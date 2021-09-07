@@ -3,8 +3,8 @@ import Vue from '@vitejs/plugin-vue'
 import Icons from 'unplugin-icons/vite'
 import IconsResolver from 'unplugin-icons/resolver'
 import Components from 'unplugin-vue-components/vite'
-import WindiCSS from 'vite-plugin-windicss'
 import AutoImport from 'unplugin-auto-import/vite'
+import WindiCSS from 'vite-plugin-windicss'
 import windiConfig from './windi.config'
 import { r, port, isDev } from './scripts/utils'
 
@@ -33,20 +33,20 @@ export const sharedConfig: UserConfig = {
       dts: r('src/auto-imports.d.ts'),
     }),
 
+    // https://github.com/antfu/unplugin-vue-components
     Components({
       dirs: [r('src/components')],
       // generate `components.d.ts` for ts support with Volar
       dts: true,
       resolvers: [
         // auto import icons
-        // https://github.com/antfu/vite-plugin-icons
         IconsResolver({
           componentPrefix: '',
         }),
       ],
     }),
 
-    // https://github.com/antfu/vite-plugin-icons
+    // https://github.com/antfu/unplugin-icons
     Icons(),
 
     // rewrite assets to use relative path
