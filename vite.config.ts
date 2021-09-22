@@ -1,3 +1,4 @@
+import { dirname, relative } from 'path'
 import { defineConfig, UserConfig } from 'vite'
 import Vue from '@vitejs/plugin-vue'
 import Icons from 'unplugin-icons/vite'
@@ -54,8 +55,8 @@ export const sharedConfig: UserConfig = {
       name: 'assets-rewrite',
       enforce: 'post',
       apply: 'build',
-      transformIndexHtml(html) {
-        return html.replace(/"\/assets\//g, '"../assets/')
+      transformIndexHtml(html, { path }) {
+        return html.replace(/"\/assets\//g, `"${relative(dirname(path), '/assets')}/`)
       },
     },
   ],
