@@ -74,7 +74,7 @@ export const sharedConfig: UserConfig = {
 
 export default defineConfig(({ command }) => ({
   ...sharedConfig,
-  base: command === 'serve' ? `http://localhost:${port}/` : undefined,
+  base: command === 'serve' ? `http://localhost:${port}/` : '/dist/',
   server: {
     port,
     hmr: {
