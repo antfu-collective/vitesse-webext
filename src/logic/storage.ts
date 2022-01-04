@@ -1,3 +1,3 @@
-import { useLocalStorage } from '@vueuse/core'
+import { useStorageLocal } from '~/composables/useStorageLocal'
 
-export const storageDemo = useLocalStorage('webext-demo', 'Storage Demo', { listenToStorageChanges: true })
+export const storageDemo = useStorageLocal('webext-demo', 'Storage Demo', { listenToStorageChanges: true })
