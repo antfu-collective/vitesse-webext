@@ -32,7 +32,7 @@
     "@typescript-eslint/eslint-plugin": "^4.32.0",
     "@vitejs/plugin-vue": "^1.9.2",
     "@vue/compiler-sfc": "^3.2.19",
-    "@vueuse/core": "^6.5.3",
+    "@vueuse/core": "^7.5.1",
     "chokidar": "^3.5.2",
     "cross-env": "^7.0.3",
     "crx": "^5.0.1",
