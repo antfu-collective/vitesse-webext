@@ -21,10 +21,8 @@ const storageLocal: StorageLikeAsync = {
   },
 }
 
-const useStorageLocal = <T>(
+export const useStorageLocal = <T>(
   key: string,
   initialValue: MaybeRef<T>,
   options?: StorageAsyncOptions<T>,
 ): RemovableRef<T> => useStorageAsync(key, initialValue, storageLocal, options)
-
-export default useStorageLocal
