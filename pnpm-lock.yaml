@@ -6,7 +6,7 @@ specifiers:
   '@iconify/json': ^1.1.408
   '@types/fs-extra': ^9.0.13
   '@types/node': ^16.10.2
-  '@types/webextension-polyfill': ^0.8.0
+  '@types/webextension-polyfill': ^0.8.2
   '@typescript-eslint/eslint-plugin': ^4.32.0
   '@vitejs/plugin-vue': ^1.9.2
   '@vue/compiler-sfc': ^3.2.19
@@ -38,7 +38,7 @@ devDependencies:
   '@iconify/json': 1.1.408
   '@types/fs-extra': 9.0.13
   '@types/node': 16.10.2
-  '@types/webextension-polyfill': 0.8.0
+  '@types/webextension-polyfill': 0.8.2
   '@typescript-eslint/eslint-plugin': 4.32.0_eslint@7.32.0+typescript@4.4.3
   '@vitejs/plugin-vue': 1.9.2_vite@2.6.2
   '@vue/compiler-sfc': 3.2.19
@@ -558,8 +558,8 @@ packages:
     resolution: {integrity: sha512-5eQEtSCoESnh2FsiLTxE121IiE60hnMqcb435fShf4bpLRjEu1Eoekht23y6zXS9Ts3l+Szu3TARnTsA0GkOkQ==}
     dev: true
 
-  /@types/webextension-polyfill/0.8.0:
-    resolution: {integrity: sha512-usmQx2snpNkVl2VoOGZCdrPnfHL+CjuSFy84ZdTwQ2b2cvyygF/zGW5YI6Zywk+bfq9zmYpORO9lmdN7DknpRw==}
+  /@types/webextension-polyfill/0.8.2:
+    resolution: {integrity: sha512-Pd+p5AQx6s78jr4gDC2p3vbw+uxP2DLLqE9iAJJpZ+OUqDm3txr6uN2wUBEwjVgZTNdBHPsxawGvPCTipF2s6w==}
     dev: true
 
   /@types/yauzl/2.9.2:
@@ -5556,7 +5556,7 @@ packages:
   /webext-bridge/5.0.0:
     resolution: {integrity: sha512-kTwgJCCi/92dqFa3LpZAiWd3yodUetoyxgQf6be2eh/FadEDWbzsKnM6UDnFB+xM0aj/P/cQCTEQ8j6yVwQDtQ==}
     dependencies:
-      '@types/webextension-polyfill': 0.8.0
+      '@types/webextension-polyfill': 0.8.2
       nanoevents: 6.0.0
       serialize-error: 8.1.0
       tiny-uid: 1.1.1

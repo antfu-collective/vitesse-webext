@@ -28,7 +28,7 @@
     "@iconify/json": "^1.1.408",
     "@types/fs-extra": "^9.0.13",
     "@types/node": "^16.10.2",
-    "@types/webextension-polyfill": "^0.8.0",
+    "@types/webextension-polyfill": "^0.8.2",
     "@typescript-eslint/eslint-plugin": "^4.32.0",
     "@vitejs/plugin-vue": "^1.9.2",
     "@vue/compiler-sfc": "^3.2.19",
