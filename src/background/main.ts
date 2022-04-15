@@ -1,5 +1,5 @@
-import { sendMessage, onMessage } from 'webext-bridge'
-import { Tabs } from 'webextension-polyfill'
+import { onMessage, sendMessage } from 'webext-bridge'
+import type { Tabs } from 'webextension-polyfill'
 
 // only on dev mode
 if (import.meta.hot) {

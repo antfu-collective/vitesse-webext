@@ -1,3 +1,11 @@
+<script setup lang="ts">
+import { storageDemo } from '~/logic/storage'
+
+function openOptionsPage() {
+  browser.runtime.openOptionsPage()
+}
+</script>
+
 <template>
   <main class="w-[300px] px-4 py-5 text-center text-gray-700">
     <Logo />
@@ -13,11 +21,3 @@
     </div>
   </main>
 </template>
-
-<script setup lang="ts">
-import { storageDemo } from '~/logic/storage'
-
-function openOptionsPage() {
-  browser.runtime.openOptionsPage()
-}
-</script>
