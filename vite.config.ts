@@ -1,5 +1,6 @@
 import { dirname, relative } from 'path'
-import { defineConfig, UserConfig } from 'vite'
+import type { UserConfig } from 'vite'
+import { defineConfig } from 'vite'
 import Vue from '@vitejs/plugin-vue'
 import Icons from 'unplugin-icons/vite'
 import IconsResolver from 'unplugin-icons/resolver'
@@ -7,7 +8,7 @@ import Components from 'unplugin-vue-components/vite'
 import AutoImport from 'unplugin-auto-import/vite'
 import WindiCSS from 'vite-plugin-windicss'
 import windiConfig from './windi.config'
-import { r, port, isDev } from './scripts/utils'
+import { isDev, port, r } from './scripts/utils'
 
 export const sharedConfig: UserConfig = {
   root: r('src'),
