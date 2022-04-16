@@ -1,7 +1,7 @@
 import { defineConfig } from 'vite'
 import WindiCSS from 'vite-plugin-windicss'
 import { sharedConfig } from './vite.config'
-import { r, isDev } from './scripts/utils'
+import { isDev, r } from './scripts/utils'
 import windiConfig from './windi.config'
 import packageJson from './package.json'
 
