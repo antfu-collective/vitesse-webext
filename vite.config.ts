@@ -1,3 +1,5 @@
+/// <reference types="vitest" />
+
 import { dirname, relative } from 'path'
 import type { UserConfig } from 'vite'
 import { defineConfig } from 'vite'
@@ -39,7 +41,7 @@ export const sharedConfig: UserConfig = {
     Components({
       dirs: [r('src/components')],
       // generate `components.d.ts` for ts support with Volar
-      dts: true,
+      dts: r('src/components.d.ts'),
       resolvers: [
         // auto import icons
         IconsResolver({
@@ -106,4 +108,8 @@ export default defineConfig(({ command }) => ({
       config: windiConfig,
     }),
   ],
+  test: {
+    globals: true,
+    environment: 'jsdom',
+  },
 }))
