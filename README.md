@@ -89,9 +89,8 @@ pnpm i
   - `styles` - styles shared in popup and options page
   - `assets` - assets used in Vue components
   - `manifest.ts` - manifest for the extension.
+- `assets` - static assets (mainly for `manifest.json`).
 - `extension` - extension package root.
-  - `assets` - static assets (mainly for `manifest.json`).
-  - `dist` - built files, also serve stub entry for Vite on development.
 - `scripts` - development and bundling helper scripts.
 
 ### Development

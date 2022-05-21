@@ -28,6 +28,8 @@ function writeManifest() {
   execSync('npx esno ./scripts/manifest.ts', { stdio: 'inherit' })
 }
 
+fs.ensureDirSync(r('extension'))
+fs.copySync(r('assets'), r('extension/assets'))
 writeManifest()
 
 if (isDev) {
