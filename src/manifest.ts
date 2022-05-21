@@ -22,7 +22,7 @@ export async function getManifest() {
       open_in_tab: true,
     },
     background: {
-      service_worker: './dist/background/index.global.js',
+      service_worker: './dist/background/index.mjs',
     },
     icons: {
       16: './assets/icon-512.png',

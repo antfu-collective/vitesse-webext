@@ -10,7 +10,8 @@
 *.zip
 dist
 dist-ssr
-extension/manifest.json
+extension/*
+!extension/assets
 node_modules
 src/auto-imports.d.ts
 src/components.d.ts
