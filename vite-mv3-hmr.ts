@@ -83,7 +83,7 @@ function normalizeViteUrl(url: string, type: string) {
   url = url.replace(/\?v=\w+$/, '')
 
   if (type === 'js' && !url.endsWith('.js') && !url.endsWith('.mjs'))
-    url = `${url}.js`
+    url = `${url}.js`.replace(/vue\?/, 'vue_')
 
   return url
 }
