@@ -48,8 +48,8 @@ function warnFailedFetch(err: Error, path: string | string[]) {
 
   console.error(
     `[hmr] Failed to reload ${path}. `
-      + 'This could be due to syntax errors or importing non-existent '
-      + 'modules. (see errors above)',
+    + 'This could be due to syntax errors or importing non-existent '
+    + 'modules. (see errors above)',
   )
 }
 
@@ -328,7 +328,7 @@ async function fetchUpdate({ path, acceptedPath, timestamp }: Update) {
       try {
         const newMod = await import(
           /* @vite-ignore */
-          `${base + path.slice(1)}.js?import&t=${timestamp}${query ? `&${query}` : ''}`
+          normalizeScriptUrl(`${base + path.slice(1)}.js${query ? `_${query}` : ''}`, timestamp)
         )
         moduleMap.set(dep, newMod)
       }
@@ -344,6 +344,12 @@ async function fetchUpdate({ path, acceptedPath, timestamp }: Update) {
     const loggedPath = isSelfUpdate ? path : `${acceptedPath} via ${path}`
     console.log(`[vite] hot updated: ${loggedPath}`)
   }
+}
+
+function normalizeScriptUrl(url: string, timestamp: number) {
+  if (!url.endsWith('.js') && !url.endsWith('.mjs'))
+    url = `${url}.js`
+  return `${url}?t=${timestamp}`
 }
 
 function sendMessageBuffer() {
@@ -391,7 +397,7 @@ export function createHotContext(ownerPath: string): ViteHotContext {
   const newListeners = new Map()
   ctxToListenersMap.set(ownerPath, newListeners)
 
-  function acceptDeps(deps: string[], callback: HotCallback['fn'] = () => {}) {
+  function acceptDeps(deps: string[], callback: HotCallback['fn'] = () => { }) {
     const mod: HotModule = hotModulesMap.get(ownerPath) || {
       id: ownerPath,
       callbacks: [],
@@ -437,7 +443,7 @@ export function createHotContext(ownerPath: string): ViteHotContext {
 
     // TODO
     // eslint-disable-next-line @typescript-eslint/no-empty-function
-    decline() {},
+    decline() { },
 
     invalidate() {
       // TODO should tell the server to re-perform hmr propagation
