@@ -123,7 +123,7 @@ And then pack files under `extension`, you can upload `extension.crx` or `extens
 
 ## Credits
 
-![](https://user-images.githubusercontent.com/11247099/127029137-6b5ad5db-76c4-4061-86ff-489911a8adfb.png)
+[![Volta](https://user-images.githubusercontent.com/904724/195351818-9e826ea9-12a0-4b06-8274-352743cd2047.png)](https://volta.net)
 
 This template is originally made for the [volta.net](https://volta.net) browser extension.
 
