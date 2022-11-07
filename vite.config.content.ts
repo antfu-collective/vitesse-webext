@@ -26,5 +26,4 @@ export default defineConfig({
       },
     },
   },
-  plugins: sharedConfig.plugins,
 })
