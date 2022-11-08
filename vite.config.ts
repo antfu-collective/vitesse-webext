@@ -102,7 +102,6 @@ export default defineConfig(({ command }) => ({
       },
     },
   },
-  plugins: sharedConfig.plugins,
   test: {
     globals: true,
     environment: 'jsdom',
