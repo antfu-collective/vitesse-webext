@@ -44,7 +44,7 @@ A [Vite](https://vitejs.dev/) powered WebExtension ([Chrome](https://developer.c
 
 ### UI Frameworks
 
-- [Windi CSS](https://github.com/unocss/unocss) - the instant on-demand Atomic CSS engine.
+- [UnoCSS](https://github.com/unocss/unocss) - the instant on-demand Atomic CSS engine
 
 ### Coding Style
 
