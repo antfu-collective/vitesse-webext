@@ -36,7 +36,7 @@ A [Vite](https://vitejs.dev/) powered WebExtension ([Chrome](https://developer.c
 - [`unplugin-auto-import`](https://github.com/antfu/unplugin-auto-import) - Directly use `browser` and Vue Composition API without importing
 - [`unplugin-vue-components`](https://github.com/antfu/vite-plugin-components) - components auto import
 - [`unplugin-icons`](https://github.com/antfu/unplugin-icons) - icons as components
-- [Iconify](https://iconify.design) - use icons from any icon sets [🔍Icônes](https://icones.netlify.app/)
+  - [Iconify](https://iconify.design) - use icons from any icon sets [🔍Icônes](https://icones.netlify.app/)
 
 ### Vue Plugins
 
