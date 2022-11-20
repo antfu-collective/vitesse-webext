@@ -21,6 +21,7 @@ export const sharedConfig: UserConfig = {
   },
   define: {
     __DEV__: isDev,
+    'process.env.NODE_ENV': JSON.stringify(isDev ? 'development' : 'production'),
   },
   plugins: [
     Vue(),
