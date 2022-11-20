@@ -4,6 +4,7 @@ specifiers:
   '@antfu/eslint-config': ^0.27.0
   '@ffflorian/jszip-cli': ^3.1.6
   '@iconify/json': ^2.1.119
+  '@rollup/plugin-replace': ^5.0.1
   '@types/fs-extra': ^9.0.13
   '@types/node': ^18.8.3
   '@types/webextension-polyfill': ^0.9.1
@@ -41,6 +42,7 @@ devDependencies:
   '@antfu/eslint-config': 0.27.0_hsf322ms6xhhd4b5ne6lb74y4a
   '@ffflorian/jszip-cli': 3.1.6
   '@iconify/json': 2.1.140
+  '@rollup/plugin-replace': 5.0.1
   '@types/fs-extra': 9.0.13
   '@types/node': 18.11.9
   '@types/webextension-polyfill': 0.9.1
@@ -474,6 +476,19 @@ packages:
 
   /@polka/url/1.0.0-next.21:
     resolution: {integrity: sha512-a5Sab1C4/icpTZVzZc5Ghpz88yQtGOyNqYXcZgOssB2uuAr+wF/MvN6bgtW32q7HHrvBki+BsZ0OuNv6EV3K9g==}
+    dev: true
+
+  /@rollup/plugin-replace/5.0.1:
+    resolution: {integrity: sha512-Z3MfsJ4CK17BfGrZgvrcp/l6WXoKb0kokULO+zt/7bmcyayokDaQ2K3eDJcRLCTAlp5FPI4/gz9MHAsosz4Rag==}
+    engines: {node: '>=14.0.0'}
+    peerDependencies:
+      rollup: ^1.20.0||^2.0.0||^3.0.0
+    peerDependenciesMeta:
+      rollup:
+        optional: true
+    dependencies:
+      '@rollup/pluginutils': 5.0.2
+      magic-string: 0.26.7
     dev: true
 
   /@rollup/pluginutils/5.0.2:

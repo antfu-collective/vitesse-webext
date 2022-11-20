@@ -23,12 +23,14 @@
     "start:chromium": "web-ext run --source-dir ./extension --target=chromium",
     "start:firefox": "web-ext run --source-dir ./extension --target=firefox-desktop",
     "clear": "rimraf extension extension.*",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "test": "vitest test"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^0.27.0",
     "@ffflorian/jszip-cli": "^3.1.6",
     "@iconify/json": "^2.1.119",
+    "@rollup/plugin-replace": "^5.0.1",
     "@types/fs-extra": "^9.0.13",
     "@types/node": "^18.8.3",
     "@types/webextension-polyfill": "^0.9.1",

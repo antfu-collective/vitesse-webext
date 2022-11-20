@@ -2,7 +2,8 @@
 import type { ErrorPayload, HMRPayload, Update } from 'vite'
 import type { ViteHotContext } from 'vite/types/hot'
 import type { InferCustomEventPayload } from 'vite/types/customEvent'
-import { ErrorOverlay, overlayId } from 'vite/src/client/overlay'
+// Vite v3 doesn't export overlay
+// import { ErrorOverlay, overlayId } from 'vite/src/client/overlay'
 
 console.debug('[vite] connecting...')
 
@@ -168,15 +169,16 @@ function createErrorOverlay(err: ErrorPayload['err']) {
   if (!enableOverlay)
     return
   clearErrorOverlay()
-  document.body.appendChild(new ErrorOverlay(err))
+  // document.body.appendChild(new ErrorOverlay(err))
 }
 
 function clearErrorOverlay() {
-  document.querySelectorAll(overlayId).forEach(n => (n as ErrorOverlay).close())
+  // document.querySelectorAll(overlayId).forEach(n => (n as ErrorOverlay).close())
 }
 
 function hasErrorOverlay() {
-  return document.querySelectorAll(overlayId).length
+  // return document.querySelectorAll(overlayId).length
+  return false
 }
 
 let pending = false
@@ -239,7 +241,6 @@ export function updateStyle(id: string, content: string): void {
     if (!style) {
       style = new CSSStyleSheet()
       style.replaceSync(content)
-      // @ts-expect-error: using experimental API
       document.adoptedStyleSheets = [...document.adoptedStyleSheets, style]
     }
     else {
@@ -269,7 +270,6 @@ export function removeStyle(id: string): void {
   const style = sheetsMap.get(id)
   if (style) {
     if (style instanceof CSSStyleSheet) {
-      // @ts-expect-error: using experimental API
       document.adoptedStyleSheets = document.adoptedStyleSheets.filter((s: CSSStyleSheet) => s !== style)
     }
     else {
@@ -485,5 +485,3 @@ export function injectQuery(url: string, queryToInject: string): string {
 
   return `${pathname}?${queryToInject}${search ? `&${search.slice(1)}` : ''}${hash || ''}`
 }
-
-export { ErrorOverlay }

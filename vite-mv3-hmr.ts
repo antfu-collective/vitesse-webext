@@ -59,6 +59,9 @@ export const MV3Hmr = (): PluginOption => {
         if (urlModule?.url) {
           code = code
             .replace(/\/@vite\/client/g, '/dist/mv3client.mjs')
+            .replace(/\/@id\//g, '/')
+            .replace(/__uno.css/g, '~~uno.css')
+            .replace(/__x00__plugin-vue:export-helper/g, '~~x00__plugin-vue:export-helper.js')
             .replace(/(\/\.vite\/deps\/\S+?)\?v=\w+/g, '$1')
           if (isWin) {
             code = code
@@ -90,5 +93,13 @@ function normalizeViteUrl(url: string, type: string) {
 }
 
 function normalizeFsUrl(url: string, type: string) {
-  return join(targetDir, normalizeViteUrl(url, type).replace(/^\//, ''))
+  return join(
+    targetDir,
+    normalizeViteUrl(url, type)
+      .replace(/^\//, '')
+      // `\0plugin-vue:export-helper` EXPORT_HELPER_ID
+      .replace(/\u0000/g, '__x00__')
+      // filenames starting with "_" are reserved for use by the system.
+      .replace(/^_+/, match => '~'.repeat(match.length))
+  )
 }
