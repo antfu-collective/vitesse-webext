@@ -10,7 +10,7 @@ export default defineConfig({
     '__DEV__': isDev,
     // https://github.com/vitejs/vite/issues/9320
     // https://github.com/vitejs/vite/issues/9186
-    'process.env.NODE_ENV': '"production"',
+    'process.env.NODE_ENV': JSON.stringify(isDev ? 'development' : 'production'),
   },
   build: {
     watch: isDev
