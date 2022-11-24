@@ -1,4 +1,3 @@
-/* eslint-disable no-console */
 import type { ErrorPayload, HMRPayload, Update } from 'vite'
 import type { ViteHotContext } from 'vite/types/hot'
 import type { InferCustomEventPayload } from 'vite/types/customEvent'
@@ -165,7 +164,7 @@ function notifyListeners(event: string, data: any): void {
     cbs.forEach(cb => cb(data))
 }
 
-function createErrorOverlay(err: ErrorPayload['err']) {
+function createErrorOverlay(_err: ErrorPayload['err']) {
   if (!enableOverlay)
     return
   clearErrorOverlay()
@@ -202,7 +201,6 @@ async function queueUpdate(p: Promise<(() => void) | undefined>) {
 }
 
 async function waitForSuccessfulPing(ms = 1000) {
-  // eslint-disable-next-line no-constant-condition
   while (true) {
     try {
       // A fetch on a websocket URL will return a successful promise with status 400,
@@ -269,12 +267,12 @@ export function updateStyle(id: string, content: string): void {
 export function removeStyle(id: string): void {
   const style = sheetsMap.get(id)
   if (style) {
-    if (style instanceof CSSStyleSheet) {
+    if (style instanceof CSSStyleSheet)
       document.adoptedStyleSheets = document.adoptedStyleSheets.filter((s: CSSStyleSheet) => s !== style)
-    }
-    else {
+
+    else
       document.head.removeChild(style)
-    }
+
     sheetsMap.delete(id)
   }
 }
@@ -442,7 +440,7 @@ export function createHotContext(ownerPath: string): ViteHotContext {
     },
 
     // TODO
-    // eslint-disable-next-line @typescript-eslint/no-empty-function
+
     decline() { },
 
     invalidate() {
