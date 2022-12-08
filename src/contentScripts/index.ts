@@ -24,5 +24,6 @@ import App from './views/App.vue'
   document.body.appendChild(container)
   const app = createApp(App)
   app.config.globalProperties.$app = { context: 'content-script' }
+  app.provide('app', app.config.globalProperties.$app)
   app.mount(root)
 })()

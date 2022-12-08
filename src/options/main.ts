@@ -4,4 +4,5 @@ import '../styles'
 
 const app = createApp(App)
 app.config.globalProperties.$app = { context: 'options' }
+app.provide('app', app.config.globalProperties.$app)
 app.mount('#app')
