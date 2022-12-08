@@ -22,5 +22,7 @@ import App from './views/App.vue'
   shadowDOM.appendChild(styleEl)
   shadowDOM.appendChild(root)
   document.body.appendChild(container)
-  createApp(App).mount(root)
+  const app = createApp(App)
+  app.config.globalProperties.$app = { context: 'content-script' }
+  app.mount(root)
 })()
