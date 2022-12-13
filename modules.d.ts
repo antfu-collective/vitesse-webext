@@ -6,4 +6,5 @@ declare module '@vue/runtime-core' {
   }
 }
 
-export { }  // Important! See https://stackoverflow.com/a/64189046/479957
+// https://stackoverflow.com/a/64189046/479957
+export {}

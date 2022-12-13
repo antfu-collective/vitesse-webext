@@ -1,7 +1,7 @@
 import { onMessage } from 'webext-bridge'
 import { createApp } from 'vue'
 import App from './views/App.vue'
-import plugin from '~/logic/plugin'
+import contextPlugin from '~/logic/context-plugin'
 
 // Firefox `browser.tabs.executeScript()` requires scripts return a primitive value
 (() => {
