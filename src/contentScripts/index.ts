@@ -1,7 +1,7 @@
-/* eslint-disable no-console */
 import { onMessage } from 'webext-bridge'
 import { createApp } from 'vue'
 import App from './views/App.vue'
+import { setupApp } from '~/logic/common-setup'
 
 // Firefox `browser.tabs.executeScript()` requires scripts return a primitive value
 (() => {
@@ -22,5 +22,7 @@ import App from './views/App.vue'
   shadowDOM.appendChild(styleEl)
   shadowDOM.appendChild(root)
   document.body.appendChild(container)
-  createApp(App).mount(root)
+  const app = createApp(App)
+  setupApp(app)
+  app.mount(root)
 })()
