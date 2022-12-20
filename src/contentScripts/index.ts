@@ -1,7 +1,7 @@
 import { onMessage } from 'webext-bridge'
 import { createApp } from 'vue'
 import App from './views/App.vue'
-import plugin from '~/logic/plugin'
+import { setupApp } from '~/logic/common-setup'
 
 // Firefox `browser.tabs.executeScript()` requires scripts return a primitive value
 (() => {
@@ -23,6 +23,6 @@ import plugin from '~/logic/plugin'
   shadowDOM.appendChild(root)
   document.body.appendChild(container)
   const app = createApp(App)
-  app.use(plugin)
+  setupApp(app)
   app.mount(root)
 })()
