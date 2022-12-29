@@ -55,10 +55,8 @@ export async function getManifest() {
     },
   }
 
-  if (isDev) {
-    delete manifest.content_scripts
+  if (isDev)
     manifest.permissions?.push('webNavigation')
-  }
 
   return manifest
 }
