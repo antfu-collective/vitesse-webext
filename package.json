@@ -21,8 +21,9 @@
     "start:chromium": "web-ext run --source-dir ./extension --target=chromium",
     "start:firefox": "web-ext run --source-dir ./extension --target=firefox-desktop",
     "clear": "rimraf extension/dist extension/manifest.json extension.*",
-    "lint": "eslint .",
-    "test": "vitest test"
+    "lint": "eslint --cache .",
+    "test": "vitest test",
+    "postinstall": "simple-git-hooks"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^0.36.0",
@@ -45,8 +46,10 @@
     "fs-extra": "^11.1.0",
     "jsdom": "^21.1.0",
     "kolorist": "^1.7.0",
+    "lint-staged": "^13.1.2",
     "npm-run-all": "^4.1.5",
     "rimraf": "^4.3.0",
+    "simple-git-hooks": "^2.8.1",
     "typescript": "^4.9.5",
     "unocss": "^0.50.4",
     "unplugin-auto-import": "^0.15.1",
@@ -59,5 +62,11 @@
     "web-ext": "^7.5.0",
     "webext-bridge": "^5.0.5",
     "webextension-polyfill": "^0.10.0"
+  },
+  "simple-git-hooks": {
+    "pre-commit": "pnpm lint-staged"
+  },
+  "lint-staged": {
+    "*": "eslint --fix"
   }
 }
