@@ -9,11 +9,11 @@ export async function getManifest() {
   // update this file to update this manifest.json
   // can also be conditional based on your need
   const manifest: Manifest.WebExtensionManifest = {
-    manifest_version: 2,
+    manifest_version: 3,
     name: pkg.displayName || pkg.name,
     version: pkg.version,
     description: pkg.description,
-    browser_action: {
+    action: {
       default_icon: './assets/icon-512.png',
       default_popup: './dist/popup/index.html',
     },
@@ -23,8 +23,7 @@ export async function getManifest() {
       chrome_style: false,
     },
     background: {
-      page: './dist/background/index.html',
-      persistent: false,
+      service_worker: './dist/background/index.js',
     },
     icons: {
       16: './assets/icon-512.png',
@@ -38,10 +37,16 @@ export async function getManifest() {
       'http://*/',
       'https://*/',
     ],
-    content_scripts: [{
-      matches: ['http://*/*', 'https://*/*'],
-      js: ['./dist/contentScripts/index.global.js'],
-    }],
+    content_scripts: [
+      {
+        matches: [
+          '<all_urls>',
+        ],
+        js: [
+          'dist/contentScripts/index.global.js',
+        ],
+      },
+    ],
     web_accessible_resources: [
       'dist/contentScripts/style.css',
     ],
