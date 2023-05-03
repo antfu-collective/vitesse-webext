@@ -20,7 +20,6 @@ export async function getManifest() {
     options_ui: {
       page: './dist/options/index.html',
       open_in_tab: true,
-      chrome_style: false,
     },
     background: {
       service_worker: './dist/background/index.js',
@@ -48,7 +47,10 @@ export async function getManifest() {
       },
     ],
     web_accessible_resources: [
-      'dist/contentScripts/style.css',
+      {
+        resources: ['dist/contentScripts/style.css'],
+        matches: ['<all_urls>'],
+      },
     ],
   }
 
