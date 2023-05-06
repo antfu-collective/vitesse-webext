@@ -33,9 +33,8 @@ export async function getManifest() {
       'tabs',
       'storage',
       'activeTab',
-      'http://*/',
-      'https://*/',
     ],
+    host_permissions: ['*://*/*'],
     content_scripts: [
       {
         matches: [
@@ -52,6 +51,12 @@ export async function getManifest() {
         matches: ['<all_urls>'],
       },
     ],
+    content_security_policy: {
+      extension_pages: isDev
+        // this is required on dev for Vite script to load
+        ? `script-src \'self\' http://localhost:${port}; object-src \'self\'`
+        : 'script-src \'self\'; object-src \'self\'',
+    },
   }
 
   if (isDev) {
@@ -60,11 +65,6 @@ export async function getManifest() {
     // see src/background/contentScriptHMR.ts
     delete manifest.content_scripts
     manifest.permissions?.push('webNavigation')
-
-    // this is required on dev for Vite script to load
-    manifest.content_security_policy = {
-      extension_pages: `script-src \'self\' http://localhost:${port}; object-src \'self\'`,
-    }
   }
 
   return manifest
