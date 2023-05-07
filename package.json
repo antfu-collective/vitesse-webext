@@ -25,6 +25,7 @@
     "clear": "rimraf --glob extension/dist extension/manifest.json extension.*",
     "lint": "eslint --cache .",
     "test": "vitest test",
+    "test:e2e": "playwright test",
     "postinstall": "simple-git-hooks",
     "typecheck": "tsc --noEmit"
   },
@@ -32,6 +33,7 @@
     "@antfu/eslint-config": "^0.36.0",
     "@ffflorian/jszip-cli": "^3.1.9",
     "@iconify/json": "^2.2.61",
+    "@playwright/test": "^1.33.0",
     "@types/fs-extra": "^11.0.1",
     "@types/node": "^18.14.6",
     "@types/webextension-polyfill": "^0.10.0",

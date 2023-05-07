@@ -59,7 +59,8 @@ export async function getManifest() {
     },
   }
 
-  if (isDev) {
+  // FIXME: not work in MV3
+  if (isDev && false) {
     // for content script, as browsers will cache them for each reload,
     // we use a background script to always inject the latest version
     // see src/background/contentScriptHMR.ts
