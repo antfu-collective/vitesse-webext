@@ -19,12 +19,12 @@ const [show, toggle] = useToggle(false)
       </h1>
       <SharedSubtitle />
     </div>
-    <div
-      class="flex w-10 h-10 rounded-full shadow cursor-pointer"
+    <button
+      class="flex w-10 h-10 rounded-full shadow cursor-pointer border-none"
       bg="teal-600 hover:teal-700"
       @click="toggle()"
     >
       <pixelarticons-power class="block m-auto text-white text-lg" />
-    </div>
+    </button>
   </div>
 </template>

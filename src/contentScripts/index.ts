@@ -15,6 +15,7 @@ import { setupApp } from '~/logic/common-setup'
 
   // mount component to context window
   const container = document.createElement('div')
+  container.id = __NAME__
   const root = document.createElement('div')
   const styleEl = document.createElement('link')
   const shadowDOM = container.attachShadow?.({ mode: __DEV__ ? 'open' : 'closed' }) || container
