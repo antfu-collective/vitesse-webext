@@ -7,6 +7,7 @@
   "description": "[description]",
   "scripts": {
     "dev": "npm run clear && cross-env NODE_ENV=development run-p dev:*",
+    "dev-firefox": "npm run clear && cross-env NODE_ENV=development EXTENSION=firefox run-p dev:*",
     "dev:prepare": "esno scripts/prepare.ts",
     "dev:background": "npm run build:background -- --mode development",
     "dev:web": "vite",
