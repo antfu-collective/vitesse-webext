@@ -111,6 +111,12 @@ pnpm start:firefox
 
 > While Vite handles HMR automatically in the most of the case, [Extensions Reloader](https://chrome.google.com/webstore/detail/fimgfedafeadlieiabdeeaodndnlbhid) is still recommanded for cleaner hard reloading.
 
+## Using Gitpod
+
+If you have a web browser, you can get a fully pre-configured development environment with one click:
+
+[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/antfu/vitesse-webext)
+
 ### Build
 
 To build the extension, run
