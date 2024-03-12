@@ -14,7 +14,7 @@ import type { Storage } from 'webextension-polyfill'
 export type WebExtensionStorageOptions<T> = UseStorageAsyncOptions<T>
 
 // https://github.com/vueuse/vueuse/blob/658444bf9f8b96118dbd06eba411bb6639e24e88/packages/core/useStorage/guess.ts
-export function guessSerializerType<T extends(string | number | boolean | object | null)>(rawInit: T) {
+export function guessSerializerType(rawInit: unknown) {
   return rawInit == null
     ? 'any'
     : rawInit instanceof Set
@@ -57,7 +57,7 @@ const storageInterface: StorageLikeAsync = {
  * @param initialValue
  * @param options
  */
-export function useWebExtensionStorage<T extends(string | number | boolean | object | null)>(
+export function useWebExtensionStorage<T>(
   key: string,
   initialValue: MaybeRefOrGetter<T>,
   options: WebExtensionStorageOptions<T> = {},
@@ -76,7 +76,7 @@ export function useWebExtensionStorage<T extends(string | number | boolean | obj
   } = options
 
   const rawInit: T = toValue(initialValue)
-  const type = guessSerializerType<T>(rawInit)
+  const type = guessSerializerType(rawInit)
 
   const data = (shallow ? shallowRef : ref)(initialValue) as Ref<T>
   const serializer = options.serializer ?? StorageSerializers[type]
