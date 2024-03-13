@@ -43,6 +43,6 @@ export function isDevArtifact() {
   const manifest: Manifest.WebExtensionManifest = fs.readJsonSync(path.resolve(extensionPath, 'manifest.json'))
   return Boolean(
     typeof manifest.content_security_policy === 'object'
-      && manifest.content_security_policy.extension_pages?.includes('localhost'),
+    && manifest.content_security_policy.extension_pages?.includes('localhost'),
   )
 }

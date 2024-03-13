@@ -1,5 +1,5 @@
 import { defineConfig } from 'vite'
-import { sharedConfig } from './vite.config'
+import { sharedConfig } from './vite.config.mjs'
 import { isDev, r } from './scripts/utils'
 import packageJson from './package.json'
 
@@ -17,18 +17,18 @@ export default defineConfig({
     watch: isDev
       ? {}
       : undefined,
-    outDir: r('extension/dist/background'),
+    outDir: r('extension/dist/contentScripts'),
     cssCodeSplit: false,
     emptyOutDir: false,
     sourcemap: isDev ? 'inline' : false,
     lib: {
-      entry: r('src/background/main.ts'),
+      entry: r('src/contentScripts/index.ts'),
       name: packageJson.name,
       formats: ['iife'],
     },
     rollupOptions: {
       output: {
-        entryFileNames: 'index.mjs',
+        entryFileNames: 'index.global.js',
         extend: true,
       },
     },
