@@ -11,7 +11,6 @@ async function stubIndexHtml() {
   const views = [
     'options',
     'popup',
-    'background',
   ]
 
   for (const view of views) {
@@ -19,7 +18,6 @@ async function stubIndexHtml() {
     let data = await fs.readFile(r(`src/${view}/index.html`), 'utf-8')
     data = data
       .replace('"./main.ts"', `"http://localhost:${port}/${view}/main.ts"`)
-      .replace('<base target="_blank">', `<base target="_blank" href="http://localhost:${port}/">`)
       .replace('<div id="app"></div>', '<div id="app">Vite server did not start</div>')
     await fs.writeFile(r(`extension/dist/${view}/index.html`), data, 'utf-8')
     log('PRE', `stub ${view}`)
