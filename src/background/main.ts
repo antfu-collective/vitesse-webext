@@ -14,6 +14,11 @@ browser.runtime.onInstalled.addListener((): void => {
   console.log('Extension installed')
 })
 
+// to toggle the sidepanel with the action button in chromium:
+// browser.sidePanel
+//  .setPanelBehavior({ openPanelOnActionClick: true })
+//  .catch((error) => console.error(error))
+
 let previousTabId = 0
 
 // communication example: send previous tab title from background page
