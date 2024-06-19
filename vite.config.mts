@@ -1,6 +1,7 @@
 /// <reference types="vitest" />
 
 import { dirname, relative } from 'node:path'
+import process from 'node:process'
 import type { UserConfig } from 'vite'
 import { defineConfig } from 'vite'
 import Vue from '@vitejs/plugin-vue'
@@ -9,8 +10,11 @@ import IconsResolver from 'unplugin-icons/resolver'
 import Components from 'unplugin-vue-components/vite'
 import AutoImport from 'unplugin-auto-import/vite'
 import UnoCSS from 'unocss/vite'
+import { config as dotenvConfig } from 'dotenv'
 import { isDev, port, r } from './scripts/utils'
 import packageJson from './package.json'
+
+dotenvConfig()
 
 export const sharedConfig: UserConfig = {
   root: r('src'),
@@ -20,8 +24,9 @@ export const sharedConfig: UserConfig = {
     },
   },
   define: {
-    __DEV__: isDev,
-    __NAME__: JSON.stringify(packageJson.name),
+    '__DEV__': isDev,
+    '__NAME__': JSON.stringify(packageJson.name),
+    'process.env': process.env,
   },
   plugins: [
     Vue(),
