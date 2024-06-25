@@ -132,7 +132,14 @@ export function useWebExtensionStorage<T>(
     data,
     async () => {
       try {
-        await (data.value == null ? storageInterface.removeItem(key) : storageInterface.setItem(key, await serializer.write(data.value)))
+        if (data.value == null) {
+          storageInterface.removeItem(key)
+          return
+        }
+        const currentStorageValue = await storageInterface.getItem(key)
+        const setStorageValue = await serializer.write(data.value)
+        if (setStorageValue !== currentStorageValue)
+          storageInterface.setItem(key, setStorageValue)
       }
       catch (error) {
         onError(error)
