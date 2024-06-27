@@ -30,6 +30,9 @@
     "postinstall": "simple-git-hooks",
     "typecheck": "tsc --noEmit"
   },
+  "dependencies": {
+    "dotenv": "^16.4.5"
+  },
   "devDependencies": {
     "@antfu/eslint-config": "^2.8.1",
     "@ffflorian/jszip-cli": "^3.6.2",
