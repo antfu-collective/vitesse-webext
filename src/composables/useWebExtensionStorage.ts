@@ -1,5 +1,5 @@
 import { StorageSerializers } from '@vueuse/core'
-import { toValue, tryOnScopeDispose, watchWithFilter } from '@vueuse/shared'
+import { pausableWatch, toValue, tryOnScopeDispose } from '@vueuse/shared'
 import { ref, shallowRef } from 'vue-demi'
 import { storage } from 'webextension-polyfill'
 
@@ -111,13 +111,42 @@ export function useWebExtensionStorage<T>(
 
   void read()
 
+  async function write() {
+    try {
+      await (
+        data.value == null
+          ? storageInterface.removeItem(key)
+          : storageInterface.setItem(key, await serializer.write(data.value))
+      )
+    }
+    catch (error) {
+      onError(error)
+    }
+  }
+
+  const { pause: pauseWatch, resume: resumeWatch } = pausableWatch(
+    data,
+    write,
+    {
+      flush,
+      deep,
+      eventFilter,
+    },
+  )
+
   if (listenToStorageChanges) {
     const listener = async (changes: Record<string, Storage.StorageChange>) => {
-      for (const [key, change] of Object.entries(changes)) {
-        await read({
-          key,
-          newValue: change.newValue as string | null,
-        })
+      try {
+        pauseWatch()
+        for (const [key, change] of Object.entries(changes)) {
+          await read({
+            key,
+            newValue: change.newValue as string | null,
+          })
+        }
+      }
+      finally {
+        resumeWatch()
       }
     }
 
@@ -127,30 +156,6 @@ export function useWebExtensionStorage<T>(
       storage.onChanged.removeListener(listener)
     })
   }
-
-  watchWithFilter(
-    data,
-    async () => {
-      try {
-        if (data.value == null) {
-          storageInterface.removeItem(key)
-          return
-        }
-        const currentStorageValue = await storageInterface.getItem(key)
-        const setStorageValue = await serializer.write(data.value)
-        if (setStorageValue !== currentStorageValue)
-          storageInterface.setItem(key, setStorageValue)
-      }
-      catch (error) {
-        onError(error)
-      }
-    },
-    {
-      flush,
-      deep,
-      eventFilter,
-    },
-  )
 
   return data as RemovableRef<T>
 }
