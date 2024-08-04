@@ -9,21 +9,13 @@ import IconsResolver from 'unplugin-icons/resolver'
 import Components from 'unplugin-vue-components/vite'
 import AutoImport from 'unplugin-auto-import/vite'
 import UnoCSS from 'unocss/vite'
-import type { ImportsMap } from 'unplugin-auto-import/types'
 import { ViteConfigType } from './scripts/enums/vite'
 import { isDev, port, r } from './scripts/utils'
 import packageJson from './package.json'
 
-export const generateSharedConfig: (type: ViteConfigType) => UserConfig = (type) => {
+export function generateSharedConfig(type: ViteConfigType) {
   const isBackground = type === ViteConfigType.Background
-
-  const importsList: ImportsMap = isBackground
-    ? {
-        'webextension-polyfill': [['*', 'browser']],
-      }
-    : {
-        'webextension-polyfill': [['default', 'browser']],
-      }
+  const importName = isBackground ? '*' : 'default'
 
   return {
     root: r('src'),
@@ -42,7 +34,9 @@ export const generateSharedConfig: (type: ViteConfigType) => UserConfig = (type)
       AutoImport({
         imports: [
           'vue',
-          importsList,
+          {
+            'webextension-polyfill': [[importName, 'browser']],
+          },
         ],
         dts: isBackground ? r('src/auto-imports.d.ts') : false,
         vueTemplate: true,
@@ -87,7 +81,7 @@ export const generateSharedConfig: (type: ViteConfigType) => UserConfig = (type)
         'vue-demi',
       ],
     },
-  }
+  } as UserConfig
 }
 
 export default defineConfig(({ command }) => ({
