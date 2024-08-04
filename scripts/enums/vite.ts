@@ -1,4 +1,4 @@
-export enum AutoImportType {
+export enum ViteConfigType {
   Background,
   Content,
   Shared,

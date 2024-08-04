@@ -10,12 +10,12 @@ import Components from 'unplugin-vue-components/vite'
 import AutoImport from 'unplugin-auto-import/vite'
 import UnoCSS from 'unocss/vite'
 import type { ImportsMap } from 'unplugin-auto-import/types'
-import { AutoImportType } from './scripts/enums/vite'
+import { ViteConfigType } from './scripts/enums/vite'
 import { isDev, port, r } from './scripts/utils'
 import packageJson from './package.json'
 
-export const generateSharedConfig: (type: AutoImportType) => UserConfig = (type) => {
-  const isBackground = type === AutoImportType.Background
+export const generateSharedConfig: (type: ViteConfigType) => UserConfig = (type) => {
+  const isBackground = type === ViteConfigType.Background
 
   const importsList: ImportsMap = isBackground
     ? {
@@ -91,7 +91,7 @@ export const generateSharedConfig: (type: AutoImportType) => UserConfig = (type)
 }
 
 export default defineConfig(({ command }) => ({
-  ...generateSharedConfig(AutoImportType.Shared),
+  ...generateSharedConfig(ViteConfigType.Shared),
   base: command === 'serve' ? `http://localhost:${port}/` : '/dist/',
   server: {
     port,

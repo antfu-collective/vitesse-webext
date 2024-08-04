@@ -1,12 +1,12 @@
 import { defineConfig } from 'vite'
-import { AutoImportType } from './scripts/enums/vite'
+import { ViteConfigType } from './scripts/enums/vite'
 import { generateSharedConfig } from './vite.config.mjs'
 import { isDev, r } from './scripts/utils'
 import packageJson from './package.json'
 
 // bundling the content script using Vite
 export default defineConfig({
-  ...generateSharedConfig(AutoImportType.Content),
+  ...generateSharedConfig(ViteConfigType.Content),
   define: {
     '__DEV__': isDev,
     '__NAME__': JSON.stringify(packageJson.name),
