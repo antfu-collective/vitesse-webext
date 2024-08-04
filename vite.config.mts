@@ -9,78 +9,89 @@ import IconsResolver from 'unplugin-icons/resolver'
 import Components from 'unplugin-vue-components/vite'
 import AutoImport from 'unplugin-auto-import/vite'
 import UnoCSS from 'unocss/vite'
+import type { ImportsMap } from 'unplugin-auto-import/types'
+import { AutoImportType } from './scripts/enums/vite'
 import { isDev, port, r } from './scripts/utils'
 import packageJson from './package.json'
 
-export const sharedConfig: UserConfig = {
-  root: r('src'),
-  resolve: {
-    alias: {
-      '~/': `${r('src')}/`,
-    },
-  },
-  define: {
-    __DEV__: isDev,
-    __NAME__: JSON.stringify(packageJson.name),
-  },
-  plugins: [
-    Vue(),
+export const generateSharedConfig: (type: AutoImportType) => UserConfig = (type) => {
+  const isBackground = type === AutoImportType.Background
 
-    AutoImport({
-      imports: [
-        'vue',
-        {
-          'webextension-polyfill': [
-            ['*', 'browser'],
-          ],
-        },
-      ],
-      dts: r('src/auto-imports.d.ts'),
-    }),
+  const importsList: ImportsMap = isBackground
+    ? {
+        'webextension-polyfill': [['*', 'browser']],
+      }
+    : {
+        'webextension-polyfill': [['default', 'browser']],
+      }
 
-    // https://github.com/antfu/unplugin-vue-components
-    Components({
-      dirs: [r('src/components')],
-      // generate `components.d.ts` for ts support with Volar
-      dts: r('src/components.d.ts'),
-      resolvers: [
-        // auto import icons
-        IconsResolver({
-          prefix: '',
-        }),
-      ],
-    }),
-
-    // https://github.com/antfu/unplugin-icons
-    Icons(),
-
-    // https://github.com/unocss/unocss
-    UnoCSS(),
-
-    // rewrite assets to use relative path
-    {
-      name: 'assets-rewrite',
-      enforce: 'post',
-      apply: 'build',
-      transformIndexHtml(html, { path }) {
-        return html.replace(/"\/assets\//g, `"${relative(dirname(path), '/assets')}/`)
+  return {
+    root: r('src'),
+    resolve: {
+      alias: {
+        '~/': `${r('src')}/`,
       },
     },
-  ],
-  optimizeDeps: {
-    include: [
-      'vue',
-      '@vueuse/core',
-      'webextension-polyfill',
+    define: {
+      __DEV__: isDev,
+      __NAME__: JSON.stringify(packageJson.name),
+    },
+    plugins: [
+      Vue(),
+
+      AutoImport({
+        imports: [
+          'vue',
+          importsList,
+        ],
+        dts: isBackground ? r('src/auto-imports.d.ts') : false,
+        vueTemplate: true,
+      }),
+
+      // https://github.com/antfu/unplugin-vue-components
+      Components({
+        dirs: [r('src/components')],
+        // generate `components.d.ts` for ts support with Volar
+        dts: r('src/components.d.ts'),
+        resolvers: [
+        // auto import icons
+          IconsResolver({
+            prefix: '',
+          }),
+        ],
+      }),
+
+      // https://github.com/antfu/unplugin-icons
+      Icons(),
+
+      // https://github.com/unocss/unocss
+      UnoCSS(),
+
+      // rewrite assets to use relative path
+      {
+        name: 'assets-rewrite',
+        enforce: 'post',
+        apply: 'build',
+        transformIndexHtml(html, { path }) {
+          return html.replace(/"\/assets\//g, `"${relative(dirname(path), '/assets')}/`)
+        },
+      },
     ],
-    exclude: [
-      'vue-demi',
-    ],
-  },
+    optimizeDeps: {
+      include: [
+        'vue',
+        '@vueuse/core',
+        'webextension-polyfill',
+      ],
+      exclude: [
+        'vue-demi',
+      ],
+    },
+  }
 }
 
 export default defineConfig(({ command }) => ({
-  ...sharedConfig,
+  ...generateSharedConfig(AutoImportType.Shared),
   base: command === 'serve' ? `http://localhost:${port}/` : '/dist/',
   server: {
     port,
