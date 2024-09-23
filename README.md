@@ -104,7 +104,7 @@ Then **load extension in browser with the `extension/` folder**.
 For Firefox developers, you can run the following command instead:
 
 ```bash
-pnpm start:firefox
+pnpm dev-firefox
 ```
 
 `web-ext` auto reload the extension when `extension/` files changed.
