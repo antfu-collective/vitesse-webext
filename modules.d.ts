@@ -1,4 +1,4 @@
-declare module '@vue/runtime-core' {
+declare module 'vue' {
   interface ComponentCustomProperties {
     $app: {
       context: string
