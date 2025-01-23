@@ -8,6 +8,7 @@ const [show, toggle] = useToggle(false)
 <template>
   <div class="fixed right-0 bottom-0 m-5 z-100 flex items-end font-sans select-none leading-1em">
     <div
+      v-show="show"
       class="bg-white text-gray-800 rounded-lg shadow w-max h-min"
       p="x-4 y-2"
       m="y-auto r-2"
