@@ -44,6 +44,7 @@
     "@vue/compiler-sfc": "^3.4.38",
     "@vue/test-utils": "^2.4.6",
     "@vueuse/core": "^11.0.1",
+    "@vueuse/shared": "^11.0.1",
     "chokidar": "^3.6.0",
     "cross-env": "^7.0.3",
     "crx": "^5.0.1",
