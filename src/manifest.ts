@@ -14,11 +14,11 @@ export async function getManifest() {
     version: pkg.version,
     description: pkg.description,
     action: {
-      default_icon: './assets/icon-512.png',
-      default_popup: './dist/popup/index.html',
+      default_icon: 'assets/icon-512.png',
+      default_popup: 'dist/popup/index.html',
     },
     options_ui: {
-      page: './dist/options/index.html',
+      page: 'dist/options/index.html',
       open_in_tab: true,
     },
     background: isFirefox
@@ -27,12 +27,12 @@ export async function getManifest() {
           type: 'module',
         }
       : {
-          service_worker: './dist/background/index.mjs',
+          service_worker: 'dist/background/index.mjs',
         },
     icons: {
-      16: './assets/icon-512.png',
-      48: './assets/icon-512.png',
-      128: './assets/icon-512.png',
+      16: 'assets/icon-512.png',
+      48: 'assets/icon-512.png',
+      128: 'assets/icon-512.png',
     },
     permissions: [
       'tabs',
