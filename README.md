@@ -15,7 +15,7 @@ A [Vite](https://vitejs.dev/) powered WebExtension ([Chrome](https://developer.c
 
 - ⚡️ **Instant HMR** - use **Vite** on dev (no more refresh!)
 - 🥝 Vue 3 - Composition API, [`<script setup>` syntax](https://github.com/vuejs/rfcs/blob/master/active-rfcs/0040-script-setup.md) and more!
-- 💬 Effortless communications - powered by [`webext-bridge`](https://github.com/antfu/webext-bridge) and [VueUse](https://github.com/antfu/vueuse) storage
+- 💬 Effortless communications - powered by [`webext-bridge`](https://github.com/serversideup/webext-bridge) and [VueUse](https://github.com/antfu/vueuse) storage
 - 🌈 [UnoCSS](https://github.com/unocss/unocss) - The instant on-demand Atomic CSS engine.
 - 🦾 [TypeScript](https://www.typescriptlang.org/) - type safe
 - 📦 [Components auto importing](./src/components)
@@ -29,13 +29,13 @@ A [Vite](https://vitejs.dev/) powered WebExtension ([Chrome](https://developer.c
 ### WebExtension Libraries
 
 - [`webextension-polyfill`](https://github.com/mozilla/webextension-polyfill) - WebExtension browser API Polyfill with types
-- [`webext-bridge`](https://github.com/antfu/webext-bridge) - effortlessly communication between contexts
+- [`webext-bridge`](https://github.com/serversideup/webext-bridge) - effortlessly communication between contexts
 
 ### Vite Plugins
 
-- [`unplugin-auto-import`](https://github.com/antfu/unplugin-auto-import) - Directly use `browser` and Vue Composition API without importing
-- [`unplugin-vue-components`](https://github.com/antfu/vite-plugin-components) - components auto import
-- [`unplugin-icons`](https://github.com/antfu/unplugin-icons) - icons as components
+- [`unplugin-auto-import`](https://github.com/unplugin/unplugin-auto-import) - Directly use `browser` and Vue Composition API without importing
+- [`unplugin-vue-components`](https://github.com/unplugin/unplugin-vue-components) - components auto import
+- [`unplugin-icons`](https://github.com/unplugin/unplugin-icons) - icons as components
   - [Iconify](https://iconify.design) - use icons from any icon sets [🔍Icônes](https://icones.netlify.app/)
 
 ### Vue Plugins
@@ -109,7 +109,7 @@ pnpm dev-firefox
 
 `web-ext` auto reload the extension when `extension/` files changed.
 
-> While Vite handles HMR automatically in the most of the case, [Extensions Reloader](https://chrome.google.com/webstore/detail/fimgfedafeadlieiabdeeaodndnlbhid) is still recommended for cleaner hard reloading.
+> While Vite handles HMR automatically in the most of the case, [Extensions Reloader](https://chromewebstore.google.com/detail/extensions-reloader/fimgfedafeadlieiabdeeaodndnlbhid) is still recommended for cleaner hard reloading.
 
 ## Using Gitpod
 
