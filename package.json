@@ -62,7 +62,7 @@
     "unplugin-icons": "^0.19.2",
     "unplugin-vue-components": "^0.27.4",
     "vite": "^5.4.2",
-    "vitest": "^2.0.5",
+    "vitest": "^2.1.9",
     "vue": "^3.4.38",
     "vue-demi": "^0.14.10",
     "web-ext": "^8.2.0",
