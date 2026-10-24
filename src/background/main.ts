@@ -1,5 +1,6 @@
 import { onMessage, sendMessage } from 'webext-bridge/background'
 import type { Tabs } from 'webextension-polyfill'
+import { configureSidePanel } from './sidePanel'
 
 // only on dev mode
 if (import.meta.hot) {
@@ -14,10 +15,8 @@ const USE_SIDE_PANEL = true
 
 // to toggle the sidepanel with the action button in chromium:
 if (USE_SIDE_PANEL) {
-  // @ts-expect-error missing types
-  browser.sidePanel
-    .setPanelBehavior({ openPanelOnActionClick: true })
-    .catch((error: unknown) => console.error(error))
+  // @ts-expect-error Chromium-only API; unavailable in Firefox
+  configureSidePanel(browser.sidePanel)
 }
 
 browser.runtime.onInstalled.addListener((): void => {

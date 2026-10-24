@@ -3,6 +3,13 @@ import type { Manifest } from 'webextension-polyfill'
 import type PkgType from '../package.json'
 import { isDev, isFirefox, port, r } from '../scripts/utils'
 
+export function getManifestPermissions(isFirefox: boolean) {
+  const permissions = ['tabs', 'storage', 'activeTab']
+  if (!isFirefox)
+    permissions.push('sidePanel')
+  return permissions
+}
+
 export async function getManifest() {
   const pkg = await fs.readJSON(r('package.json')) as typeof PkgType
 
@@ -34,12 +41,7 @@ export async function getManifest() {
       48: 'assets/icon-512.png',
       128: 'assets/icon-512.png',
     },
-    permissions: [
-      'tabs',
-      'storage',
-      'activeTab',
-      'sidePanel',
-    ],
+    permissions: getManifestPermissions(isFirefox),
     host_permissions: ['*://*/*'],
     content_scripts: [
       {
